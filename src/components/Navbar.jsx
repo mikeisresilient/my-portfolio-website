@@ -30,6 +30,7 @@ export default function Navbar() {
     if (open) {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
+
     } else {
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
@@ -46,10 +47,11 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"
-          : "bg-slate-950/90 backdrop-blur-xl md:bg-transparent md:backdrop-blur-none"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+
         {/* Logo */}
         <Link
           to="home"
@@ -113,9 +115,10 @@ export default function Navbar() {
               duration: 0.35,
               ease: "easeInOut",
             }}
-            className="fixed inset-0 z-[55] bg-slate-950/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-[55] bg-blue-900 md:hidden"
           >
             <div className="flex h-screen flex-col overflow-y-auto px-8 pt-24 pb-8">
+
               {navLinks.map((item, index) => (
                 <motion.div
                   key={item.label}
