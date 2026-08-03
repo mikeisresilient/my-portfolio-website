@@ -105,9 +105,9 @@ export default function Navbar() {
               duration: 0.35,
               ease: "easeInOut",
             }}
-            className="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl md:hidden"
+            className="fixed left-0 right-0 bottom-0 top-[76px] z-40 bg-slate-950/95 backdrop-blur-xl md:hidden"
           >
-            <div className="flex h-full flex-col overflow-y-auto px-8 pt-24 pb-8">
+            <div className="flex h-full flex-col overflow-y-auto px-8 pt-12 pb-8">
 
               {navLinks.map((item, index) => (
                 <motion.div
