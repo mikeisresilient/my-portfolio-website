@@ -25,18 +25,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
+  // Lock page scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (open) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+
+    } else {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    }
 
     return () => {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     };
   }, [open]);
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b border-white/10 bg-slate-950/70 backdrop-blur-xl"
           : "bg-transparent"
@@ -50,7 +58,9 @@ export default function Navbar() {
           smooth={true}
           duration={500}
           offset={-80}
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            setOpen(false);
+          }}
           className="-ml-0 cursor-pointer text-lg font-bold tracking-wide sm:text-xl md:ml-5 md:text-2xl"
         >
           Mike <span className="text-blue-500">Is Resilient</span>
@@ -86,8 +96,8 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          onClick={() => setOpen(!open)}
-          className="relative z-[60] rounded-lg p-2 transition hover:bg-slate-800 md:hidden"
+          onClick={() => setOpen((prev) => !prev)}
+          className="relative z-[110] rounded-lg p-2 transition hover:bg-slate-800 md:hidden"
           aria-label="Toggle navigation"
         >
           {open ? <HiX size={30} /> : <HiMenuAlt3 size={30} />}
@@ -105,9 +115,9 @@ export default function Navbar() {
               duration: 0.35,
               ease: "easeInOut",
             }}
-            className="fixed left-0 right-0 bottom-0 top-[76px] z-40 bg-slate-950/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-[55] bg-slate-950/95 backdrop-blur-xl md:hidden"
           >
-            <div className="flex h-full flex-col overflow-y-auto px-8 pt-12 pb-8">
+            <div className="flex h-screen flex-col overflow-y-auto px-8 pt-24 pb-8">
 
               {navLinks.map((item, index) => (
                 <motion.div
@@ -146,7 +156,6 @@ export default function Navbar() {
               >
                 Download Resume
               </a>
-
             </div>
           </motion.div>
         )}
