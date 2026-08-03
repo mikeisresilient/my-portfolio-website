@@ -47,14 +47,14 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        
+
         {/* Logo */}
         <Link
           to="home"
           smooth={true}
           duration={500}
           offset={-80}
-          className="-ml-2 md:ml-5 cursor-pointer text-xl sm:text-2xl font-bold tracking-wide"
+          className="-ml-0 md:ml-5 cursor-pointer text-xl sm:text-2xl font-bold tracking-wide"
         >
           Mike <span className="text-blue-500">Is Resilient</span>
         </Link>
