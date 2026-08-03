@@ -1,15 +1,15 @@
-import tmgreatness from "../assets/projects/tmgreatness.webp";
-import littleLemon from "../assets/projects/little-lemon.webp";
-import attendance from "../assets/projects/attendance.webp";
-import blockchain from "../assets/projects/blockchain.webp";
-import staking from "../assets/projects/staking.webp";
 import fromZeroHQ from "../assets/projects/fromzerohq.png";
+import tmgreatness from "../assets/projects/tmgreatness.png";
+import littleLemon from "../assets/projects/little-lemon.png";
+import attendance from "../assets/projects/attendance.png";
+import blockchain from "../assets/projects/blockchain.png";
+import staking from "../assets/projects/staking.jpg";
+import placeholder from "../assets/projects/placeholder.png";
 
-// Temporary placeholders.
-// Replace these imports with dedicated images later.
-const digitalWill = blockchain;
-const voting = blockchain;
-const token = blockchain;
+// Temporary placeholders
+const digitalWill = placeholder;
+const voting = placeholder;
+const token = placeholder;
 
 export const projects = [
   {
@@ -137,7 +137,7 @@ export const projects = [
       "Web3.js",
     ],
     github: "https://github.com/mikeisresilient/resilient-staking-dapp",
-    live: "#",
+    live: "https://resilient-staking-dapp.vercel.app/",
   },
 
   {
@@ -157,7 +157,7 @@ export const projects = [
       "Hardhat",
     ],
     github: "https://github.com/mikeisresilient/chronara-digital-estate",
-    live: "#",
+    live: null,
   },
 
   {
@@ -177,7 +177,7 @@ export const projects = [
       "Ethers.js",
     ],
     github: "https://github.com/mikeisresilient/Voting-DApp",
-    live: "#",
+    live: null,
   },
 
   {
@@ -196,6 +196,6 @@ export const projects = [
       "OpenZeppelin",
     ],
     github: "https://github.com/mikeisresilient/crypto-token-contract",
-    live: "#",
+    live: null,
   },
 ];

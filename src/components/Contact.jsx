@@ -1,6 +1,14 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FiMail, FiMapPin, FiCopy, FiCheck, FiSend } from "react-icons/fi";
+import {
+  FiMail,
+  FiMapPin,
+  FiCopy,
+  FiCheck,
+  FiSend,
+  FiPhone,
+} from "react-icons/fi";
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
@@ -36,6 +44,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
+      // Send notification to you
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -43,13 +52,21 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
-      toast.success("Message sent successfully!");
+      // Send automatic reply to the visitor
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      toast.success("Your message has been sent successfully!");
 
       form.current.reset();
     } catch (error) {
-      console.error(error);
+      console.error("EmailJS Error:", error);
 
-      toast.error("Failed to send message.");
+      toast.error("Unable to send message. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -80,43 +97,75 @@ const Contact = () => {
               Contact Information
             </h3>
 
-            {/* Email */}
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-800 p-4">
-              <div className="flex items-center gap-4">
+            {/* Contact Details */}
+            <div className="space-y-5">
+              {/* Email */}
+              <a
+                href={`mailto:${profile.email}`}
+                className="flex items-center rounded-xl border border-slate-800 p-4 transition hover:border-blue-500 hover:bg-slate-800/50"
+              >
                 <div className="rounded-xl bg-blue-500/10 p-3">
                   <FiMail className="text-blue-400" size={22} />
                 </div>
 
-                <div>
+                <div className="ml-4">
                   <p className="text-sm text-slate-400">Email</p>
-
                   <p className="break-all text-white">{profile.email}</p>
                 </div>
-              </div>
+              </a>
 
-              <button
-                onClick={copyEmail}
-                className="rounded-lg p-2 transition hover:bg-slate-800"
+              {/* WhatsApp */}
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center rounded-xl border border-slate-800 p-4 transition hover:border-green-500 hover:bg-slate-800/50"
               >
-                {copied ? (
-                  <FiCheck className="text-green-400" />
-                ) : (
-                  <FiCopy className="text-blue-400" />
-                )}
-              </button>
+                <div className="rounded-xl bg-green-500/10 p-3">
+                  <FaWhatsapp className="text-green-400" size={22} />
+                </div>
+
+                <div className="ml-4">
+                  <p className="text-sm text-slate-400">WhatsApp</p>
+                  <p className="text-white">{profile.phone}</p>
+                </div>
+              </a>
+
+              {/* Telegram */}
+              <a
+                href={profile.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center rounded-xl border border-slate-800 p-4 transition hover:border-sky-500 hover:bg-slate-800/50"
+              >
+                <div className="rounded-xl bg-sky-500/10 p-3">
+                  <FaTelegramPlane className="text-sky-400" size={22} />
+                </div>
+
+                <div className="ml-4">
+                  <p className="text-sm text-slate-400">Telegram</p>
+                  <p className="text-white">@mikeisresilient</p>
+                </div>
+              </a>
             </div>
 
-            {/* Location */}
-            <div className="flex items-center rounded-xl border border-slate-800 p-4">
-              <div className="rounded-xl bg-blue-500/10 p-3">
-                <FiMapPin className="text-blue-400" size={22} />
-              </div>
-
-              <div className="ml-4">
-                <p className="text-sm text-slate-400">Location</p>
-
-                <p className="text-white">{profile.location}</p>
-              </div>
+            <div className="mt-6">
+              <button
+                onClick={copyEmail}
+                className="flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 transition hover:border-blue-500 hover:bg-slate-800"
+              >
+                {copied ? (
+                  <>
+                    <FiCheck className="text-green-400" />
+                    Email Copied
+                  </>
+                ) : (
+                  <>
+                    <FiCopy className="text-blue-400" />
+                    Copy Email Address
+                  </>
+                )}
+              </button>
             </div>
 
             {/* Socials */}

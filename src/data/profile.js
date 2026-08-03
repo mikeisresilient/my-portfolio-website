@@ -43,6 +43,10 @@ export const profile = {
 
   portfolio: "https://yourportfolio.com", // TODO: Replace after deployment
 
+  whatsapp: "https://wa.me/2348063023766",
+
+  telegram: "https://t.me/mikeisresilient",
+
   resume: "/resume.pdf",
 
   profileImageAlt: "Portrait of Michael Ege",

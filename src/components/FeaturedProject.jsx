@@ -12,30 +12,30 @@ const FeaturedProject = ({ project }) => {
     >
       <div className="grid lg:grid-cols-2">
         {/* Image */}
-       {/* Image */}
-<div className="lg:col-span-3">
-  <div className="flex items-center justify-center bg-slate-950 p-8 lg:p-10">
-    <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
-      {/* Browser Bar */}
-      <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-800 px-4 py-3">
-        <span className="h-3 w-3 rounded-full bg-red-500" />
-        <span className="h-3 w-3 rounded-full bg-yellow-500" />
-        <span className="h-3 w-3 rounded-full bg-green-500" />
-      </div>
+        {/* Image */}
+        <div className="lg:col-span-3">
+          <div className="flex items-center justify-center bg-slate-950 p-8 lg:p-10">
+            <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+              {/* Browser Bar */}
+              <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-800 px-4 py-3">
+                <span className="h-3 w-3 rounded-full bg-red-500" />
+                <span className="h-3 w-3 rounded-full bg-yellow-500" />
+                <span className="h-3 w-3 rounded-full bg-green-500" />
+              </div>
 
-      <img
-        src={project.image}
-        alt={project.title}
-        className="block w-full h-auto transition duration-700 group-hover:scale-[1.02]"
-      />
-    </div>
-  </div>
-</div>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="block w-full h-auto transition duration-700 group-hover:scale-[1.02]"
+              />
+            </div>
+          </div>
+        </div>
 
-{/* Content */}
-<div className="lg:col-span-2 flex flex-col justify-center p-8 lg:p-12">
-  {/* Existing content */}
-</div>
+        {/* Content */}
+        <div className="lg:col-span-2 flex flex-col justify-center p-8 lg:p-12">
+          {/* Existing content */}
+        </div>
 
         {/* Content */}
         <div className="flex flex-col justify-center p-8 lg:p-12">
@@ -50,30 +50,20 @@ const FeaturedProject = ({ project }) => {
           </h2>
 
           {/* Description */}
-          <p className="mb-8 leading-8 text-slate-400">
-            {project.description}
-          </p>
+          <p className="mb-8 leading-8 text-slate-400">{project.description}</p>
 
           {/* Challenge */}
           <div className="mb-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">
-              Challenge
-            </h3>
+            <h3 className="mb-2 text-lg font-semibold text-white">Challenge</h3>
 
-            <p className="leading-7 text-slate-400">
-              {project.challenge}
-            </p>
+            <p className="leading-7 text-slate-400">{project.challenge}</p>
           </div>
 
           {/* Solution */}
           <div className="mb-8">
-            <h3 className="mb-2 text-lg font-semibold text-white">
-              Solution
-            </h3>
+            <h3 className="mb-2 text-lg font-semibold text-white">Solution</h3>
 
-            <p className="leading-7 text-slate-400">
-              {project.solution}
-            </p>
+            <p className="leading-7 text-slate-400">{project.solution}</p>
           </div>
 
           {/* Technologies */}
@@ -90,15 +80,17 @@ const FeaturedProject = ({ project }) => {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
-            >
-              Live Demo
-              <FiExternalLink />
-            </a>
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
+              >
+                Live Demo
+                <FiExternalLink />
+              </a>
+            )}
 
             <a
               href={project.github}

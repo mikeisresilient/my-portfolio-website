@@ -20,9 +20,7 @@ const ProjectCard = ({ project }) => {
       {/* Content */}
       <div className="space-y-5 p-6">
         <div>
-          <h3 className="mb-2 text-xl font-bold text-white">
-            {project.title}
-          </h3>
+          <h3 className="mb-2 text-xl font-bold text-white">{project.title}</h3>
 
           <p className="text-sm leading-7 text-slate-400">
             {project.description}
@@ -53,15 +51,17 @@ const ProjectCard = ({ project }) => {
             GitHub
           </a>
 
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
-          >
-            <FiExternalLink />
-            Live Demo
-          </a>
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+            >
+              <FiExternalLink />
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
