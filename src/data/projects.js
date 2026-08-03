@@ -103,26 +103,6 @@ export const projects = [
   {
     id: 5,
     featured: false,
-    title: "Blockchain Assessment",
-    image: blockchain,
-    description:
-      "A blockchain implementation demonstrating transactions, wallets, mining, balances, and block validation.",
-    challenge:
-      "Build a functional blockchain that demonstrates the core concepts behind distributed ledgers.",
-    solution:
-      "Implemented blockchain logic with Node.js and Express while providing a React interface for interacting with the chain.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-    ],
-    github: "https://github.com/mikeisresilient/blockchain-assessment",
-    live: "#",
-  },
-
-  {
-    id: 6,
-    featured: false,
     title: "Resilient Staking DApp",
     image: staking,
     description:
@@ -139,6 +119,28 @@ export const projects = [
     github: "https://github.com/mikeisresilient/resilient-staking-dapp",
     live: "https://resilient-staking-dapp.vercel.app/",
   },
+
+  {
+    id: 6,
+    featured: false,
+    title: "Blockchain Assessment",
+    image: blockchain,
+    description:
+      "A blockchain implementation demonstrating transactions, wallets, mining, balances, and block validation.",
+    challenge:
+      "Build a functional blockchain that demonstrates the core concepts behind distributed ledgers.",
+    solution:
+      "Implemented blockchain logic with Node.js and Express while providing a React interface for interacting with the chain.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+    ],
+    github: "https://github.com/mikeisresilient/blockchain-assessment",
+    live: null,
+  },
+
+
 
   {
     id: 7,

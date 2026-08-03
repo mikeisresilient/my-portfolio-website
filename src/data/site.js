@@ -4,7 +4,7 @@ export const site = {
     description:
         "Full Stack Developer specializing in modern web applications, backend systems, and blockchain development.",
 
-    url: "https://yourportfolio.com",
+    url: "https://mikeisresilient.vercel.app",
 
     author: "Michael Ege",
 

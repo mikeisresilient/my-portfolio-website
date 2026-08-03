@@ -236,7 +236,7 @@ https://your-vercel-url.vercel.app
 
 Full Stack Web Developer passionate about building scalable web applications, modern user interfaces, and blockchain-powered solutions.
 
-- 🌐 Portfolio: https://your-vercel-url.vercel.app
+- 🌐 Portfolio: https://mikeisresilient.vercel.app
 - 💼 LinkedIn: https://www.linkedin.com/in/michael-ege-2997ba420
 - 🐙 GitHub: https://github.com/mikeisresilient
 - 🐦 X (Twitter): https://x.com/mikeisresilient

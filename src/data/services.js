@@ -15,7 +15,7 @@ export const services = [
     description:
       "Modern, responsive websites that help businesses establish a strong online presence and convert visitors into customers.",
     technologies: ["React", "Tailwind CSS", "Vite"],
-    buttonText: "Learn More",
+    buttonText: "Let's Talk",
   },
 
   {
@@ -25,7 +25,7 @@ export const services = [
     description:
       "Scalable web applications with modern frontends, secure backends, authentication, and database integration.",
     technologies: ["React", "Node.js", "Express", "Django"],
-    buttonText: "Learn More",
+    buttonText: "Let's Talk",
   },
 
   {
@@ -35,7 +35,7 @@ export const services = [
     description:
       "Designing and building secure, scalable APIs for web and mobile applications.",
     technologies: ["Node.js", "Express", "Django"],
-    buttonText: "Learn More",
+    buttonText: "Let's Talk",
   },
 
   {
@@ -45,7 +45,7 @@ export const services = [
     description:
       "Interactive dashboards with analytics, user management, authentication, and reporting.",
     technologies: ["React", "Charts", "REST API"],
-    buttonText: "Learn More",
+    buttonText: "Let's Talk",
   },
 
   {
@@ -55,7 +55,7 @@ export const services = [
     description:
       "Smart contracts and decentralized applications built on Ethereum using modern Web3 technologies.",
     technologies: ["Solidity", "Hardhat", "Ethers.js"],
-    buttonText: "Learn More",
+    buttonText: "Let's Talk",
   },
 
   {
@@ -65,6 +65,6 @@ export const services = [
     description:
       "Continuous support, bug fixes, performance optimization, feature enhancements, and long-term maintenance.",
     technologies: ["Optimization", "Deployment", "Support"],
-    buttonText: "Learn More",
+    buttonText: "Let's Talk",
   },
 ];

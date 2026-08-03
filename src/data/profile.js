@@ -41,7 +41,7 @@ export const profile = {
 
   phone: "+234 806 302 3766", // TODO: Replace with your phone number
 
-  portfolio: "https://yourportfolio.com", // TODO: Replace after deployment
+  portfolio: "https://mikeisresilient.vercel.app", // TODO: Replace after deployment
 
   whatsapp: "https://wa.me/2348063023766",
 

@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-scroll";
 
 const ServiceCard = ({ service }) => {
-  const { title, description, technologies = [], icon: Icon, buttonText, } = service;
+  const {
+    title,
+    description,
+    technologies = [],
+    icon: Icon,
+    buttonText,
+  } = service;
 
   return (
     <motion.article
@@ -34,12 +41,17 @@ const ServiceCard = ({ service }) => {
       </div>
 
       {/* Learn More */}
-      <div className="mt-8 flex items-center gap-2 text-blue-400 transition-all duration-300 group-hover:gap-3">
-        <span className="text-sm font-medium">{buttonText} || "Learn More"</span>
-        <FiArrowRight
-          className="transition-transform duration-300 group-hover:translate-x-1"
-          aria-hidden="true"
-        />{" "}
+      <div className="mt-8">
+        <Link
+          to="contact"
+          smooth={true}
+          duration={500}
+          offset={-90}
+          className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700"
+        >
+          <span>{buttonText}</span>
+          <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
       </div>
     </motion.article>
   );
