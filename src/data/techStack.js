@@ -1,0 +1,80 @@
+import {
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+
+import {
+  SiTailwindcss,
+  SiDjango,
+  SiJavascript,
+  SiTypescript,
+  SiSolidity,
+  SiExpress,
+  SiMongodb,
+  SiVercel,
+} from "react-icons/si";
+
+export const techStack = [
+  {
+    name: "React",
+    icon: FaReact,
+    color: "text-sky-400",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "text-yellow-400",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "text-blue-500",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "text-cyan-400",
+  },
+  {
+    name: "Node.js",
+    icon: FaNodeJs,
+    color: "text-green-500",
+  },
+  {
+    name: "Express",
+    icon: SiExpress,
+    color: "text-gray-300",
+  },
+  {
+    name: "Django",
+    icon: SiDjango,
+    color: "text-green-400",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "text-green-500",
+  },
+  {
+    name: "Solidity",
+    icon: SiSolidity,
+    color: "text-gray-300",
+  },
+  {
+    name: "Git",
+    icon: FaGitAlt,
+    color: "text-orange-500",
+  },
+  {
+    name: "GitHub",
+    icon: FaGithub,
+    color: "text-white",
+  },
+  {
+    name: "Vercel",
+    icon: SiVercel,
+    color: "text-white",
+  },
+];
