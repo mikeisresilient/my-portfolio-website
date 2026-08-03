@@ -115,7 +115,7 @@ export default function Navbar() {
               duration: 0.35,
               ease: "easeInOut",
             }}
-            className="fixed inset-0 z-[55] bg-blue-900 md:hidden"
+            className="fixed inset-0 z-[55] bg-slate-950/95 backdrop-blur-xl md:hidden"
           >
             <div className="flex h-screen flex-col overflow-y-auto px-8 pt-24 pb-8">
 
