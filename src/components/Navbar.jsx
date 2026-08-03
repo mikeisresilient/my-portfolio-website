@@ -47,7 +47,6 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-
         {/* Logo */}
         <Link
           to="home"
@@ -101,29 +100,13 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl md:hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 top-[76px] z-40 bg-slate-950/95 backdrop-blur-xl md:hidden"
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Close navigation"
-              className="absolute right-6 top-6 rounded-full border border-white/10 p-3 transition hover:border-blue-500"
-            >
-              <HiX size={28} />
-            </button>
-
-            {/* Mobile Links */}
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              transition={{ duration: 0.35 }}
-              className="flex h-full flex-col items-center justify-center gap-8"
-            >
+            <div className="flex h-full flex-col items-center pt-10">
               {navLinks.map((item) => (
                 <Link
                   key={item.label}
@@ -134,7 +117,7 @@ export default function Navbar() {
                   duration={500}
                   onClick={() => setOpen(false)}
                   activeClass="text-blue-400"
-                  className="cursor-pointer text-3xl font-semibold transition hover:text-blue-400"
+                  className="w-full cursor-pointer py-5 text-center text-xl font-semibold transition hover:bg-slate-800"
                 >
                   {item.label}
                 </Link>
@@ -144,12 +127,11 @@ export default function Navbar() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="mt-6 rounded-xl bg-blue-600 px-8 py-4 font-semibold transition hover:bg-blue-700"
+                className="mt-8 rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white transition hover:bg-blue-700"
               >
                 Download Resume
               </a>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
