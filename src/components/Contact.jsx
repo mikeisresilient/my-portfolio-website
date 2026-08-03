@@ -67,21 +67,21 @@ const Contact = () => {
           subtitle="Have a project, collaboration, or opportunity? I'd love to hear from you."
         />
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-2">
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-slate-800 bg-slate-900/60 p-8 backdrop-blur-md"
+            className="w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md"
           >
             <h3 className="mb-8 text-2xl font-bold text-white">
               Contact Information
             </h3>
 
             {/* Email */}
-            <div className="mb-5 flex items-center justify-between rounded-xl border border-slate-800 p-4">
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-800 p-4">
               <div className="flex items-center gap-4">
                 <div className="rounded-xl bg-blue-500/10 p-3">
                   <FiMail className="text-blue-400" size={22} />
@@ -90,7 +90,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-slate-400">Email</p>
 
-                  <p className="text-white">{profile.email}</p>
+                  <p className="break-all text-white">{profile.email}</p>
                 </div>
               </div>
 
@@ -149,7 +149,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-slate-800 bg-slate-900/60 p-8 backdrop-blur-md"
+            className="w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md"
           >
             <div className="space-y-6">
               <input
@@ -157,7 +157,7 @@ const Contact = () => {
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
               />
 
               <input
@@ -165,7 +165,7 @@ const Contact = () => {
                 name="email"
                 placeholder="Your Email"
                 required
-                className="w-full rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
               />
 
               <input
@@ -173,7 +173,7 @@ const Contact = () => {
                 name="subject"
                 placeholder="Subject"
                 required
-                className="w-full rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
               />
 
               <textarea
@@ -181,7 +181,7 @@ const Contact = () => {
                 rows={6}
                 placeholder="Tell me about your project..."
                 required
-                className="w-full rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
               />
 
               <button
