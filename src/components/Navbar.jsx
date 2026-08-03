@@ -25,13 +25,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scrolling when mobile menu is open
+  // Prevent body scroll when menu is open
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = open ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -47,13 +43,15 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+
         {/* Logo */}
         <Link
           to="home"
           smooth={true}
           duration={500}
           offset={-80}
-          className="-ml-0 md:ml-5 cursor-pointer text-xl sm:text-2xl font-bold tracking-wide"
+          onClick={() => setOpen(false)}
+          className="-ml-0 cursor-pointer text-lg font-bold tracking-wide sm:text-xl md:ml-5 md:text-2xl"
         >
           Mike <span className="text-blue-500">Is Resilient</span>
         </Link>
@@ -86,51 +84,69 @@ export default function Navbar() {
           Resume
         </a>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button
-          onClick={() => setOpen(true)}
-          className="md:hidden"
-          aria-label="Open navigation"
+          onClick={() => setOpen(!open)}
+          className="relative z-[60] rounded-lg p-2 transition hover:bg-slate-800 md:hidden"
+          aria-label="Toggle navigation"
         >
-          <HiMenuAlt3 size={30} />
+          {open ? <HiX size={30} /> : <HiMenuAlt3 size={30} />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-[76px] z-40 bg-slate-950/95 backdrop-blur-xl md:hidden"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{
+              duration: 0.35,
+              ease: "easeInOut",
+            }}
+            className="fixed left-0 right-0 bottom-0 top-[76px] z-40 bg-slate-950/95 backdrop-blur-xl md:hidden"
           >
-            <div className="flex h-full flex-col items-center pt-10">
-              {navLinks.map((item) => (
-                <Link
+            <div className="flex h-full flex-col justify-center px-8">
+
+              {navLinks.map((item, index) => (
+                <motion.div
                   key={item.label}
-                  to={item.to}
-                  smooth={true}
-                  spy={true}
-                  offset={-90}
-                  duration={500}
-                  onClick={() => setOpen(false)}
-                  activeClass="text-blue-400"
-                  className="w-full cursor-pointer py-5 text-center text-xl font-semibold transition hover:bg-slate-800"
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: index * 0.08,
+                    duration: 0.3,
+                  }}
+                  className="w-full"
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    to={item.to}
+                    smooth={true}
+                    spy={true}
+                    offset={-90}
+                    duration={500}
+                    onClick={() => setOpen(false)}
+                    activeClass="text-blue-400"
+                    className="block w-full rounded-xl px-6 py-5 text-center text-2xl font-semibold transition-all duration-300 hover:bg-slate-800 hover:text-blue-400"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
+
+              <div className="my-8 h-px w-full bg-white/10" />
 
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white transition hover:bg-blue-700"
+                onClick={() => setOpen(false)}
+                className="w-full rounded-xl bg-blue-600 py-4 text-center font-semibold shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700"
               >
                 Download Resume
               </a>
+
             </div>
           </motion.div>
         )}
