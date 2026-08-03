@@ -40,7 +40,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-green-500/30 bg-green-500/10 mb-8 mt-10"
+              className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-green-500/30 bg-green-500/10 mb-8 mt-20"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-ping" />
 
