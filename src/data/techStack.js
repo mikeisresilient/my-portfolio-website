@@ -6,7 +6,12 @@ import {
 } from "react-icons/fa";
 
 import {
+  SiNextdotjs,
   SiTailwindcss,
+  SiShadcnui,
+  SiPrisma,
+  SiPostgresql,
+  SiNeon,
   SiDjango,
   SiJavascript,
   SiTypescript,
@@ -21,6 +26,11 @@ export const techStack = [
     name: "React",
     icon: FaReact,
     color: "text-sky-400",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "text-white",
   },
   {
     name: "JavaScript",
@@ -38,6 +48,11 @@ export const techStack = [
     color: "text-cyan-400",
   },
   {
+    name: "shadcn/ui",
+    icon: SiShadcnui,
+    color: "text-white",
+  },
+  {
     name: "Node.js",
     icon: FaNodeJs,
     color: "text-green-500",
@@ -46,6 +61,21 @@ export const techStack = [
     name: "Express",
     icon: SiExpress,
     color: "text-gray-300",
+  },
+  {
+    name: "Prisma",
+    icon: SiPrisma,
+    color: "text-teal-400",
+  },
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "text-blue-400",
+  },
+  {
+    name: "Neon",
+    icon: SiNeon,
+    color: "text-green-400",
   },
   {
     name: "Django",
