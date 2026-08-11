@@ -42,13 +42,7 @@ const Contact = () => {
     e.preventDefault();
 
     setLoading(true);
-    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
-    console.log("Template ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-    console.log(
-      "Auto Template:",
-      import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
-    );
-    console.log("Public Key:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    
 
     try {
       // Send notification to you

@@ -5,6 +5,7 @@ import attendance from "../assets/projects/attendance.png";
 import blockchain from "../assets/projects/blockchain.png";
 import staking from "../assets/projects/staking.jpg";
 import placeholder from "../assets/projects/placeholder.png";
+import prostore from "../assets/projects/prostore.png";
 
 // Temporary placeholders
 const digitalWill = placeholder;
@@ -14,7 +15,7 @@ const token = placeholder;
 export const projects = [
   {
     id: 1,
-    featured: true,
+    featured: false,
     title: "FromZeroHQ",
     image: fromZeroHQ,
 
@@ -200,4 +201,41 @@ export const projects = [
     github: "https://github.com/mikeisresilient/crypto-token-contract",
     live: null,
   },
+
+  {
+  id: 10,
+  featured: true,
+  title: "ProStore Ecommerce",
+  image: prostore,
+
+  description:
+    "A complete modern ecommerce platform featuring customer accounts, product management, shopping cart, wishlist, secure Paystack payments, inventory management, order management, currency support, and a responsive shopping experience.",
+
+  challenge:
+    "Build a complete ecommerce platform capable of handling the full customer journey, from product discovery and account management to checkout, payment processing, order management, and inventory control.",
+
+  solution:
+    "Developed a full stack ecommerce platform using Next.js, React, TypeScript, Prisma, and PostgreSQL with secure authentication, role based access control, Paystack payment integration, currency conversion, database transactions, inventory management, order management, REST APIs, and a responsive admin dashboard. The application was deployed to Vercel for production use.",
+
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Prisma",
+    "PostgreSQL",
+    "Neon",
+    "Auth.js",
+    "Paystack",
+    "REST APIs",
+    "Git",
+    "GitHub",
+    "Vercel",
+  ],
+
+  github: "https://github.com/mikeisresilient/prostore-ecommerce",
+
+  live: "https://prostore-ecommerce.vercel.app",
+},
 ];
