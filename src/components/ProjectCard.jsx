@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const ProjectCard = ({ project }) => {
+  const isMobileProject = project.title === "ProStore Mobile";
+
   return (
     <motion.article
       whileHover={{ y: -8 }}
@@ -9,22 +11,30 @@ const ProjectCard = ({ project }) => {
       className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-md"
     >
       {/* Image */}
-      <div className="overflow-hidden">
+      <div
+        className={`w-full overflow-hidden bg-slate-950 ${
+          isMobileProject
+            ? "flex h-72 items-center justify-center p-4 sm:h-80"
+            : "h-56 p-2"
+        }`}
+      >
         <img
-  src={project.image}
-  alt={project.title}
-  className={`h-56 w-full transition duration-500 ${
-    project.title === "ProStore Mobile"
-      ? "object-contain bg-slate-950 p-4 group-hover:scale-105"
-      : "object-cover group-hover:scale-105"
-  }`}
-/>
+          src={project.image}
+          alt={project.title}
+          className={`transition duration-500 group-hover:scale-[1.02] ${
+            isMobileProject
+              ? "h-full w-auto max-w-full rounded-xl object-contain"
+              : "h-full w-full rounded-xl object-contain"
+          }`}
+        />
       </div>
 
       {/* Content */}
       <div className="space-y-5 p-6">
         <div>
-          <h3 className="mb-2 text-xl font-bold text-white">{project.title}</h3>
+          <h3 className="mb-2 text-xl font-bold text-white">
+            {project.title}
+          </h3>
 
           <p className="text-sm leading-7 text-slate-400">
             {project.description}
