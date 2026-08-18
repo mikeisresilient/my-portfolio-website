@@ -12,10 +12,10 @@ const FeaturedProject = ({ project }) => {
     >
       <div className="grid lg:grid-cols-2">
         {/* Image */}
-        {/* Image */}
         <div className="lg:col-span-3">
-          <div className="flex items-center justify-center bg-slate-950 p-8 lg:p-10">
-            <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+          <div className="flex w-full items-center justify-center bg-slate-950 p-4 sm:p-6 lg:p-10">
+            <div className="w-full max-w-6xl overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl">
+              
               {/* Browser Bar */}
               <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-800 px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-red-500" />
@@ -23,11 +23,14 @@ const FeaturedProject = ({ project }) => {
                 <span className="h-3 w-3 rounded-full bg-green-500" />
               </div>
 
-              <img
-                src={project.image}
-                alt={project.title}
-                className="block w-full h-auto transition duration-700 group-hover:scale-[1.02]"
-              />
+              {/* Full Website Screenshot */}
+              <div className="flex w-full items-center justify-center bg-slate-950">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="block h-auto w-full object-contain transition duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -40,7 +43,7 @@ const FeaturedProject = ({ project }) => {
         {/* Content */}
         <div className="flex flex-col justify-center p-8 lg:p-12">
           {/* Badge */}
-          <span className="mb-4 w-fit rounded-full bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-400 border border-blue-500/20">
+          <span className="mb-4 w-fit rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-400">
             ⭐ Featured Project
           </span>
 
@@ -50,20 +53,30 @@ const FeaturedProject = ({ project }) => {
           </h2>
 
           {/* Description */}
-          <p className="mb-8 leading-8 text-slate-400">{project.description}</p>
+          <p className="mb-8 leading-8 text-slate-400">
+            {project.description}
+          </p>
 
           {/* Challenge */}
           <div className="mb-6">
-            <h3 className="mb-2 text-lg font-semibold text-white">Challenge</h3>
+            <h3 className="mb-2 text-lg font-semibold text-white">
+              Challenge
+            </h3>
 
-            <p className="leading-7 text-slate-400">{project.challenge}</p>
+            <p className="leading-7 text-slate-400">
+              {project.challenge}
+            </p>
           </div>
 
           {/* Solution */}
           <div className="mb-8">
-            <h3 className="mb-2 text-lg font-semibold text-white">Solution</h3>
+            <h3 className="mb-2 text-lg font-semibold text-white">
+              Solution
+            </h3>
 
-            <p className="leading-7 text-slate-400">{project.solution}</p>
+            <p className="leading-7 text-slate-400">
+              {project.solution}
+            </p>
           </div>
 
           {/* Technologies */}
@@ -105,15 +118,16 @@ const FeaturedProject = ({ project }) => {
 
           {/* Learnings */}
           <div className="mt-10 border-t border-slate-800 pt-6">
-            <div className="flex items-center gap-2 text-blue-400 font-medium">
+            <div className="flex items-center gap-2 font-medium text-blue-400">
               Key Outcome
               <FiArrowRight />
             </div>
 
             <p className="mt-2 leading-7 text-slate-400">
-              Delivered a fast, responsive, and visually engaging web experience
-              that strengthens the brand's online presence while maintaining
-              excellent performance across desktop and mobile devices.
+              Delivered a fast, responsive, and visually engaging web
+              experience that strengthens the brand's online presence while
+              maintaining excellent performance across desktop and mobile
+              devices.
             </p>
           </div>
         </div>

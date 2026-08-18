@@ -1,5 +1,6 @@
 import { FaReact, FaNodeJs } from "react-icons/fa6";
-import { SiDjango, SiSolidity } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export const floatingBadges = [
   {
@@ -9,21 +10,21 @@ export const floatingBadges = [
     position: "top-6 -left-6",
   },
   {
-    name: "Node.js",
-    icon: FaNodeJs,
-    color: "text-green-500",
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "text-white",
     position: "top-20 -right-8",
   },
   {
-    name: "Django",
-    icon: SiDjango,
-    color: "text-green-400",
+    name: "React Native",
+    icon: TbBrandReactNative,
+    color: "text-cyan-400",
     position: "bottom-24 -left-8",
   },
   {
-    name: "Solidity",
-    icon: SiSolidity,
-    color: "text-gray-300",
+    name: "Node.js",
+    icon: FaNodeJs,
+    color: "text-green-500",
     position: "bottom-6 -right-6",
   },
 ];

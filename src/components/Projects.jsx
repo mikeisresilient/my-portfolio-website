@@ -35,7 +35,7 @@ const Projects = () => {
         <SectionTitle
           badge="Portfolio"
           title="Featured Projects"
-          subtitle="A selection of projects that demonstrate my ability to design, build, and deploy modern web applications."
+          subtitle="A selection of projects that demonstrate my ability to design, build, and deploy modern web, mobile & blockchain applications."
         />
 
         {/* Featured Project */}

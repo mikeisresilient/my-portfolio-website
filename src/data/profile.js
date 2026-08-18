@@ -22,7 +22,7 @@ export const profile = {
     "Building resilient software that solves real world problems.",
 
   heroDescription:
-    "I design and build scalable web applications that blend beautiful user interfaces with robust backend systems. Whether it's a business website, a full stack platform, or a blockchain application, I focus on creating software that is fast, reliable, and built to last.",
+    "I design and build scalable web & mobile applications that blend beautiful user interfaces with robust backend systems. Whether it's a business website, a full stack platform, or a blockchain application, I focus on creating software that is fast, reliable, and built to last.",
 
   typingRoles: [
     "Full Stack Web Developer",

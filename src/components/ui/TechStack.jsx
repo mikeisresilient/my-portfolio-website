@@ -8,7 +8,7 @@ export default function TechStack() {
         Currently Working With
       </h4>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-2 gap-4 md:flex md:flex-wrap">
         {techStack.map((tech, index) => {
           const Icon = tech.icon;
 
