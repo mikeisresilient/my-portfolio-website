@@ -11,10 +11,14 @@ const ProjectCard = ({ project }) => {
       {/* Image */}
       <div className="overflow-hidden">
         <img
-          src={project.image}
-          alt={project.title}
-          className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+  src={project.image}
+  alt={project.title}
+  className={`h-56 w-full transition duration-500 ${
+    project.title === "ProStore Mobile"
+      ? "object-contain bg-slate-950 p-4 group-hover:scale-105"
+      : "object-cover group-hover:scale-105"
+  }`}
+/>
       </div>
 
       {/* Content */}

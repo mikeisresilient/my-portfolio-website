@@ -6,6 +6,7 @@ import blockchain from "../assets/projects/blockchain.png";
 import staking from "../assets/projects/staking.jpg";
 import placeholder from "../assets/projects/placeholder.png";
 import prostore from "../assets/projects/prostore.png";
+import prostoreMobile from "../assets/projects/prostore-mobile.png";
 
 // Temporary placeholders
 const digitalWill = placeholder;
@@ -59,6 +60,43 @@ export const projects = [
     ],
     github: "https://github.com/mikeisresilient/tmgreatness-website",
     live: "https://tmgreatness-website.vercel.app/",
+  },
+
+  {
+    id: 11,
+    featured: false,
+    title: "ProStore Mobile",
+    image: prostoreMobile,
+
+    description:
+      "A production ready mobile ecommerce application built with React Native and Expo, featuring authentication, product browsing, cart, wishlist, checkout, Paystack payments, order management, currency support, and light and dark mode.",
+
+    challenge:
+      "Build a complete mobile shopping experience that connects securely to an ecommerce backend while providing reliable authentication, cart management, payment processing, order handling, and a responsive experience across Android devices.",
+
+    solution:
+      "Developed a React Native application with Expo and TypeScript using Expo Router for navigation, secure local storage for authentication data, Paystack for payments, and a Next.js backend powered by Prisma and PostgreSQL. Implemented product browsing, authentication, cart and wishlist functionality, stock validation, address management, payment verification, order management, currency support, persistent theme preferences, and production Android builds through EAS.",
+
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "React Navigation",
+      "Reanimated",
+      "Secure Store",
+      "AsyncStorage",
+      "Next.js",
+      "Prisma",
+      "PostgreSQL",
+      "Paystack",
+      "EAS Build",
+    ],
+
+    github: "https://github.com/mikeisresilient/prostore-mobile",
+
+    live:
+      "https://expo.dev/accounts/mikeisresilient/projects/prostore-mobile/builds/b4a62dbb-afe1-4bcf-9045-f1ea4cad335b",
   },
 
   {
@@ -203,39 +241,39 @@ export const projects = [
   },
 
   {
-  id: 10,
-  featured: true,
-  title: "ProStore Ecommerce",
-  image: prostore,
+    id: 10,
+    featured: true,
+    title: "ProStore Ecommerce",
+    image: prostore,
 
-  description:
-    "A complete modern ecommerce platform featuring customer accounts, product management, shopping cart, wishlist, secure Paystack payments, inventory management, order management, currency support, and a responsive shopping experience.",
+    description:
+      "A complete modern ecommerce platform featuring customer accounts, product management, shopping cart, wishlist, secure Paystack payments, inventory management, order management, currency support, and a responsive shopping experience.",
 
-  challenge:
-    "Build a complete ecommerce platform capable of handling the full customer journey, from product discovery and account management to checkout, payment processing, order management, and inventory control.",
+    challenge:
+      "Build a complete ecommerce platform capable of handling the full customer journey, from product discovery and account management to checkout, payment processing, order management, and inventory control.",
 
-  solution:
-    "Developed a full stack ecommerce platform using Next.js, React, TypeScript, Prisma, and PostgreSQL with secure authentication, role based access control, Paystack payment integration, currency conversion, database transactions, inventory management, order management, REST APIs, and a responsive admin dashboard. The application was deployed to Vercel for production use.",
+    solution:
+      "Developed a full stack ecommerce platform using Next.js, React, TypeScript, Prisma, and PostgreSQL with secure authentication, role based access control, Paystack payment integration, currency conversion, database transactions, inventory management, order management, REST APIs, and a responsive admin dashboard. The application was deployed to Vercel for production use.",
 
-  technologies: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "shadcn/ui",
-    "Prisma",
-    "PostgreSQL",
-    "Neon",
-    "Auth.js",
-    "Paystack",
-    "REST APIs",
-    "Git",
-    "GitHub",
-    "Vercel",
-  ],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Prisma",
+      "PostgreSQL",
+      "Neon",
+      "Auth.js",
+      "Paystack",
+      "REST APIs",
+      "Git",
+      "GitHub",
+      "Vercel",
+    ],
 
-  github: "https://github.com/mikeisresilient/prostore-ecommerce",
+    github: "https://github.com/mikeisresilient/prostore-ecommerce",
 
-  live: "https://prostore-ecommerce.vercel.app",
-},
+    live: "https://prostore-ecommerce.vercel.app",
+  },
 ];

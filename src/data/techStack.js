@@ -19,6 +19,7 @@ import {
   SiExpress,
   SiMongodb,
   SiVercel,
+  SiExpo,
 } from "react-icons/si";
 
 export const techStack = [
@@ -26,6 +27,11 @@ export const techStack = [
     name: "React",
     icon: FaReact,
     color: "text-sky-400",
+  },
+  {
+    name: "Expo",
+    icon: SiExpo,
+    color: "text-white",
   },
   {
     name: "Next.js",
