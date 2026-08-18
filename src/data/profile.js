@@ -25,10 +25,9 @@ export const profile = {
     "I design and build scalable web applications that blend beautiful user interfaces with robust backend systems. Whether it's a business website, a full stack platform, or a blockchain application, I focus on creating software that is fast, reliable, and built to last.",
 
   typingRoles: [
-    "Full Stack Developer",
-    "React Developer",
-    "Backend Developer",
-    "Blockchain Developer",
+    "Full Stack Web Developer",
+    "Mobile App Developer",
+    "Full Stack Blockchain Developer",
     "Problem Solver",
   ],
 
