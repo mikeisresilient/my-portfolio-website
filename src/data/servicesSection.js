@@ -4,7 +4,7 @@ export const servicesSection = {
   title: "How I Can Help",
 
   subtitle:
-    "I build modern, scalable, and high performance digital products that help businesses and individuals bring their ideas to life.",
+    "I design and build modern, scalable digital products across web, mobile, and blockchain, turning ideas into reliable and user focused experiences.",
 
   cta: {
     badge: "Ready to Collaborate?",
@@ -12,7 +12,7 @@ export const servicesSection = {
     title: "Have an idea in mind?",
 
     description:
-      "Whether you need a business website, a full stack application, or a blockchain solution, let's work together to create something exceptional.",
+      "Whether you need a modern website, a full stack web or mobile application, or a blockchain solution, let's work together to turn your idea into a reliable and engaging product.",
 
     button: "Start a Project",
   },

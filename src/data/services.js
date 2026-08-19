@@ -1,10 +1,10 @@
 import {
   FiGlobe,
   FiLayout,
+  FiSmartphone,
   FiDatabase,
   FiCode,
   FiCpu,
-  FiSettings,
 } from "react-icons/fi";
 
 export const services = [
@@ -13,8 +13,8 @@ export const services = [
     icon: FiGlobe,
     title: "Business Websites",
     description:
-      "Modern, responsive websites that help businesses establish a strong online presence and convert visitors into customers.",
-    technologies: ["React", "Tailwind CSS", "Vite"],
+      "Modern, responsive websites that help businesses establish a strong online presence and deliver a professional digital experience.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Vite"],
     buttonText: "Let's Talk",
   },
 
@@ -23,48 +23,61 @@ export const services = [
     icon: FiLayout,
     title: "Full Stack Applications",
     description:
-      "Scalable web applications with modern frontends, secure backends, authentication, and database integration.",
-    technologies: ["React", "Node.js", "Express", "Django"],
+      "Scalable web applications with modern frontends, secure backends, authentication, APIs, and database integration.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Django",
+      "Prisma",
+    ],
     buttonText: "Let's Talk",
   },
 
   {
     id: 3,
-    icon: FiDatabase,
-    title: "REST API Development",
+    icon: FiSmartphone,
+    title: "Mobile App Development",
     description:
-      "Designing and building secure, scalable APIs for web and mobile applications.",
-    technologies: ["Node.js", "Express", "Django"],
+      "Modern cross platform mobile applications with responsive interfaces, authentication, APIs, payments, and persistent data.",
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Next.js",
+      "PostgreSQL",
+    ],
     buttonText: "Let's Talk",
   },
 
   {
     id: 4,
-    icon: FiCode,
-    title: "Admin Dashboards",
+    icon: FiDatabase,
+    title: "REST API Development",
     description:
-      "Interactive dashboards with analytics, user management, authentication, and reporting.",
-    technologies: ["React", "Charts", "REST API"],
+      "Secure and scalable REST APIs that power web and mobile applications with reliable data processing and backend functionality.",
+    technologies: ["Node.js", "Express", "Django", "PostgreSQL"],
     buttonText: "Let's Talk",
   },
 
   {
     id: 5,
-    icon: FiCpu,
-    title: "Blockchain Applications",
+    icon: FiCode,
+    title: "Admin Dashboards",
     description:
-      "Smart contracts and decentralized applications built on Ethereum using modern Web3 technologies.",
-    technologies: ["Solidity", "Hardhat", "Ethers.js"],
+      "Interactive dashboards for managing users, products, orders, inventory, analytics, and other business operations.",
+    technologies: ["React", "Next.js", "REST APIs", "PostgreSQL"],
     buttonText: "Let's Talk",
   },
 
   {
     id: 6,
-    icon: FiSettings,
-    title: "Website Maintenance",
+    icon: FiCpu,
+    title: "Blockchain Applications",
     description:
-      "Continuous support, bug fixes, performance optimization, feature enhancements, and long-term maintenance.",
-    technologies: ["Optimization", "Deployment", "Support"],
+      "Smart contracts and decentralized applications built with Solidity and modern Web3 technologies for Ethereum based systems.",
+    technologies: ["Solidity", "Hardhat", "Ethers.js", "Web3.js"],
     buttonText: "Let's Talk",
   },
 ];

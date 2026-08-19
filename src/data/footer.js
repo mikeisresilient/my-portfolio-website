@@ -1,6 +1,6 @@
 export const footer = {
   tagline:
-    "Building scalable web applications, blockchain solutions, and digital experiences that make an impact.",
+    "Building scalable web and mobile applications, blockchain solutions, and digital experiences that turn ideas into impactful products.",
 
   quickLinks: [
     { label: "About", href: "#about" },

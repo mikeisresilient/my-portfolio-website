@@ -52,7 +52,7 @@ const Projects = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3"
+            className="mt-16 columns-1 gap-8 md:columns-2 xl:columns-3"
           >
             {otherProjects.map((project) => (
               <ProjectCard

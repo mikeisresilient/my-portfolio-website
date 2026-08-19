@@ -58,7 +58,7 @@ export const profile = {
     },
 
     secondary: {
-      label: "Download Resume",
+      label: "Resume",
       href: "/resume.pdf",
     },
   },

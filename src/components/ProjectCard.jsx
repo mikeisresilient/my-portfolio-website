@@ -2,30 +2,18 @@ import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const ProjectCard = ({ project }) => {
-  const isMobileProject = project.title === "ProStore Mobile";
-
   return (
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
-      className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-md"
+      className="group mb-8 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-md"
     >
       {/* Image */}
-      <div
-        className={`w-full overflow-hidden bg-slate-950 ${
-          isMobileProject
-            ? "flex h-72 items-center justify-center p-4 sm:h-80"
-            : "h-56 p-2"
-        }`}
-      >
+      <div className="w-full overflow-hidden rounded-t-2xl bg-slate-950">
         <img
           src={project.image}
           alt={project.title}
-          className={`transition duration-500 group-hover:scale-[1.02] ${
-            isMobileProject
-              ? "h-full w-auto max-w-full rounded-xl object-contain"
-              : "h-full w-full rounded-xl object-contain"
-          }`}
+          className="block h-auto w-full rounded-t-2xl transition duration-500 group-hover:scale-[1.02]"
         />
       </div>
 

@@ -154,7 +154,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="w-full rounded-xl bg-blue-600 py-4 text-center font-semibold shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700"
               >
-                Download Resume
+                Resume
               </a>
             </div>
           </motion.div>
