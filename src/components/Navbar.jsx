@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -16,6 +20,7 @@ const navLinks = [
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
 
@@ -23,7 +28,9 @@ export default function Navbar() {
     document.documentElement.classList.contains("dark"),
   );
 
-  /* Toggle theme */
+  /* =========================
+     THEME
+  ========================== */
   const toggleTheme = () => {
     const newDarkMode = !darkMode;
 
@@ -40,19 +47,57 @@ export default function Navbar() {
     );
   };
 
-  /* Close mobile menu */
+  /* =========================
+     CLOSE MOBILE MENU
+  ========================== */
   const closeMenu = () => {
     setOpen(false);
   };
 
-  /* Active navigation item */
+  /* =========================
+     NAVIGATION
+  ========================== */
+  const handleNavigation = (path) => {
+    closeMenu();
+
+    if (path === "/about#tech-stack") {
+      navigate("/about#tech-stack");
+
+      setTimeout(() => {
+        const element = document.getElementById("tech-stack");
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+
+      return;
+    }
+
+    navigate(path);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  /* =========================
+     ACTIVE STATE
+  ========================== */
   const isActive = (path) => {
     if (path === "/") {
       return location.pathname === "/";
     }
 
-    if (path.includes("#")) {
-      return location.pathname === path.split("#")[0];
+    if (path === "/about#tech-stack") {
+      return (
+        location.pathname === "/about" &&
+        location.hash === "#tech-stack"
+      );
     }
 
     return location.pathname === path;
@@ -71,12 +116,12 @@ export default function Navbar() {
           z-50
           border-b
           border-transparent
-          bg-white/80
+          bg-white/90
           backdrop-blur-xl
           transition-colors
           duration-300
           dark:border-white/5
-          dark:bg-slate-950/80
+          dark:bg-slate-950/90
         "
       >
         <div
@@ -100,17 +145,24 @@ export default function Navbar() {
           ========================== */}
           <Link
             to="/"
-            onClick={closeMenu}
+            onClick={() => {
+              closeMenu();
+
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
             className="
               min-w-0
               shrink
-              cursor-pointer
               whitespace-nowrap
               text-base
               font-bold
               tracking-wide
               text-slate-900
               transition-colors
+              duration-300
               hover:text-blue-500
               dark:text-white
               dark:hover:text-blue-400
@@ -137,11 +189,15 @@ export default function Navbar() {
             "
           >
             {navLinks.map((item) => (
-              <Link
+              <button
                 key={item.label}
-                to={item.to}
+                type="button"
+                onClick={() => handleNavigation(item.to)}
                 className={`
                   whitespace-nowrap
+                  border-none
+                  bg-transparent
+                  p-0
                   text-sm
                   font-medium
                   transition-colors
@@ -154,7 +210,7 @@ export default function Navbar() {
                 `}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -237,7 +293,7 @@ export default function Navbar() {
               Resume
             </a>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Button */}
             <button
               type="button"
               onClick={() => setOpen((prev) => !prev)}
@@ -302,7 +358,7 @@ export default function Navbar() {
               "
             />
 
-            {/* Menu Panel */}
+            {/* Menu */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -326,7 +382,7 @@ export default function Navbar() {
               className="
                 fixed
                 right-3
-                top-19
+                top-[4.75rem]
                 z-50
                 w-[calc(100%-1.5rem)]
                 max-w-sm
@@ -342,11 +398,12 @@ export default function Navbar() {
                 lg:hidden
               "
             >
-              {/* Navigation Links */}
+              {/* Navigation */}
               <div className="space-y-1">
                 {navLinks.map((item, index) => (
-                  <motion.div
+                  <motion.button
                     key={item.label}
+                    type="button"
                     initial={{
                       opacity: 0,
                       x: 10,
@@ -358,30 +415,29 @@ export default function Navbar() {
                     transition={{
                       delay: index * 0.04,
                     }}
+                    onClick={() =>
+                      handleNavigation(item.to)
+                    }
+                    className={`
+                      flex
+                      w-full
+                      items-center
+                      rounded-xl
+                      px-4
+                      py-3
+                      text-left
+                      text-sm
+                      font-medium
+                      transition-colors
+                      ${
+                        isActive(item.to)
+                          ? "bg-blue-500/10 text-blue-500 dark:text-blue-400"
+                          : "text-slate-700 hover:bg-slate-100 hover:text-blue-500 dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-blue-400"
+                      }
+                    `}
                   >
-                    <Link
-                      to={item.to}
-                      onClick={closeMenu}
-                      className={`
-                        flex
-                        w-full
-                        items-center
-                        rounded-xl
-                        px-4
-                        py-3
-                        text-sm
-                        font-medium
-                        transition-colors
-                        ${
-                          isActive(item.to)
-                            ? "bg-blue-500/10 text-blue-500 dark:text-blue-400"
-                            : "text-slate-700 hover:bg-slate-100 hover:text-blue-500 dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-blue-400"
-                        }
-                      `}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
+                    {item.label}
+                  </motion.button>
                 ))}
               </div>
 
