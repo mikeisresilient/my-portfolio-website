@@ -55,7 +55,7 @@ export const profile = {
   cta: {
     primary: {
       label: "Explore My Work",
-      href: "#projects",
+      href: "/projects",
     },
 
     secondary: {

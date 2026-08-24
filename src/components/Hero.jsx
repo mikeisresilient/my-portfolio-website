@@ -52,7 +52,8 @@ export default function Hero() {
               className="
                 mb-8
                 mt-20
-                inline-flex
+                flex
+                w-fit
                 max-w-full
                 items-center
                 gap-2.5
@@ -62,7 +63,7 @@ export default function Hero() {
                 bg-green-500/10
                 px-4
                 py-2
-                text-center
+                text-left
                 sm:gap-3
                 sm:px-5
                 sm:py-2.5
@@ -70,7 +71,16 @@ export default function Hero() {
             >
               <span className="h-2.5 w-2.5 shrink-0 animate-ping rounded-full bg-green-400" />
 
-              <span className="text-sm font-medium leading-5 text-green-600 dark:text-green-300 sm:text-base">
+              <span
+                className="
+                  text-sm
+                  font-medium
+                  leading-5
+                  text-green-600
+                  dark:text-green-300
+                  sm:text-base
+                "
+              >
                 {profile.availability}
               </span>
             </motion.div>
@@ -81,14 +91,30 @@ export default function Hero() {
             </p>
 
             {/* Name */}
-            <h1 className="text-5xl font-black leading-tight text-slate-900 dark:text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1
+              className="
+                text-5xl
+                font-black
+                leading-tight
+                text-slate-900
+                dark:text-white
+                sm:text-6xl
+                md:text-7xl
+                lg:text-8xl
+              "
+            >
               {profile.firstName}{" "}
-              <span className="text-blue-500">{profile.lastName}</span>
+              <span className="text-blue-500">
+                {profile.lastName}
+              </span>
             </h1>
 
             {/* Typing Roles */}
             <TypeAnimation
-              sequence={profile.typingRoles.flatMap((role) => [role, 2200])}
+              sequence={profile.typingRoles.flatMap((role) => [
+                role,
+                2200,
+              ])}
               wrapper="h2"
               speed={40}
               repeat={Infinity}
@@ -106,20 +132,20 @@ export default function Hero() {
 
             {/* Description */}
             <p
-                className="
-                  mx-auto
-                  mt-8
-                  max-w-3xl
-                  text-justify
-                  text-base
-                  leading-8
-                  text-slate-600
-                  dark:text-slate-400
-                  sm:text-lg
-                "
-              >
-                {profile.heroDescription}
-              </p>
+              className="
+                mx-auto
+                mt-8
+                max-w-3xl
+                text-justify
+                text-base
+                leading-8
+                text-slate-600
+                dark:text-slate-400
+                sm:text-lg
+              "
+            >
+              {profile.heroDescription}
+            </p>
 
             {/* Buttons */}
             <div className="mt-10 flex flex-wrap justify-center gap-5">

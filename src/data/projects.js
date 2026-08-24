@@ -113,7 +113,7 @@ export const projects = [
 
   {
     id: 4,
-    featured: true,
+    featured: false,
     title: "ChainPulse",
     image: chainpulse,
 
@@ -338,7 +338,7 @@ export const projects = [
 
   {
     id: 12,
-    featured: false,
+    featured: true,
     title: "ProStore Ecommerce",
     image: prostore,
 

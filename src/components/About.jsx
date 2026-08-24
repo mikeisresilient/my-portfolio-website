@@ -25,36 +25,68 @@ export default function About() {
       "
     >
       <Container>
-        <SectionTitle subtitle="About Me" title={about.heading} />
+        <SectionTitle
+          subtitle="About Me"
+          title={about.heading}
+        />
 
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Left */}
+        {/* Main About Content */}
+        <div
+          className="
+            grid
+            items-start
+            gap-8
+            lg:grid-cols-[0.9fr_1.1fr]
+            lg:gap-10
+            xl:gap-12
+          "
+        >
+          {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center"
+            className="
+              relative
+              flex
+              justify-center
+              lg:justify-start
+            "
           >
-            <div className="absolute -inset-4 rounded-3xl bg-linear-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 blur-3xl" />
-
-            <GlassCard className="relative p-4">
+            <GlassCard className="relative w-full max-w-md p-4 lg:max-w-lg">
               <img
                 src={profile}
                 alt="Michael Ege"
-                className="w-full max-w-md rounded-2xl object-cover"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="
+                  w-full
+                  rounded-2xl
+                  object-cover
+                "
               />
             </GlassCard>
           </motion.div>
 
-          {/* Right */}
+          {/* Right: Introduction + Counters */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="min-w-0"
           >
-            <h3 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
+            <h3
+              className="
+                mb-6
+                text-3xl
+                font-bold
+                text-slate-900
+                dark:text-white
+              "
+            >
               Hi, I'm{" "}
               <span className="text-blue-500 dark:text-blue-400">
                 Michael Ege.
@@ -78,7 +110,15 @@ export default function About() {
             ))}
 
             {/* Counters */}
-            <div className="mb-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div
+              className="
+                mb-8
+                grid
+                grid-cols-2
+                gap-4
+                sm:grid-cols-4
+              "
+            >
               {about.counters.map((counter) => (
                 <div
                   key={counter.label}
@@ -97,27 +137,43 @@ export default function About() {
                     dark:shadow-none
                   "
                 >
-                  <div className="text-2xl font-bold text-blue-500 dark:text-blue-400">
+                  <div
+                    className="
+                      text-2xl
+                      font-bold
+                      text-blue-500
+                      dark:text-blue-400
+                    "
+                  >
                     <AnimatedCounter
                       end={counter.end}
                       suffix={counter.suffix}
                     />
                   </div>
 
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p
+                    className="
+                      mt-1
+                      text-xs
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                  >
                     {counter.label}
                   </p>
                 </div>
               ))}
             </div>
-
-            {/* Tech Stack */}
-            <TechStack />
           </motion.div>
         </div>
 
+        {/* Tech Stack */}
+        <div className="mt-16">
+          <TechStack />
+        </div>
+
         {/* Highlight Cards */}
-        <div className="mt-24 grid gap-8 md:grid-cols-3">
+        <div className="mt-20 grid gap-8 md:grid-cols-3">
           {about.highlights.map((item, index) => {
             const Icon = item.icon;
 
@@ -140,11 +196,25 @@ export default function About() {
                     />
                   </div>
 
-                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3
+                    className="
+                      mb-4
+                      text-2xl
+                      font-bold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
                     {item.title}
                   </h3>
 
-                  <p className="leading-7 text-slate-600 dark:text-slate-400">
+                  <p
+                    className="
+                      leading-7
+                      text-slate-600
+                      dark:text-slate-400
+                    "
+                  >
                     {item.description}
                   </p>
                 </GlassCard>

@@ -57,7 +57,7 @@ export const services = [
       "React Native",
       "Expo",
       "TypeScript",
-      "Next.js",
+      "REST APIs",
       "PostgreSQL",
     ],
 

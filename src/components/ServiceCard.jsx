@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
   const {
@@ -93,16 +93,12 @@ const ServiceCard = ({ service }) => {
         ))}
       </div>
 
-      {/* Learn More */}
+      {/* Contact Button */}
       <div className="mt-8">
         <Link
-          to="contact"
-          smooth={true}
-          duration={500}
-          offset={-90}
+          to="/contact"
           className="
             inline-flex
-            cursor-pointer
             items-center
             gap-2
             rounded-xl
@@ -121,7 +117,12 @@ const ServiceCard = ({ service }) => {
           <span>{buttonText}</span>
 
           <FiArrowRight
-            className="transition-transform duration-300 group-hover:translate-x-1"
+            className="
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+            "
+            aria-hidden="true"
           />
         </Link>
       </div>
