@@ -7,7 +7,6 @@ import ServiceCard from "./ServiceCard";
 
 import { services } from "../data/services";
 import { servicesSection } from "../data/servicesSection";
-import BackgroundGlow from "./ui/BackgroundGlow";
 
 const Services = () => {
   return (
@@ -25,8 +24,6 @@ const Services = () => {
         dark:text-white
       "
     >
-      <BackgroundGlow />
-
       <Container>
         <SectionTitle
           badge={servicesSection.badge}
@@ -44,7 +41,10 @@ const Services = () => {
         >
           {services.length > 0 ? (
             services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+              <ServiceCard
+                key={service.id}
+                service={service}
+              />
             ))
           ) : (
             <p className="col-span-full text-center text-slate-500 dark:text-slate-400">
@@ -65,24 +65,34 @@ const Services = () => {
             overflow-hidden
             rounded-3xl
             border
-            border-blue-500/20
-            bg-linear-to-r
-            from-blue-600/10
-            to-violet-600/10
+            border-slate-200
+            bg-slate-100
             p-10
             transition-colors
             duration-300
-            dark:from-blue-600/10
-            dark:to-violet-600/10
+            dark:border-white/10
+            dark:bg-white/5
             lg:p-14
           "
         >
-          {/* Glow */}
-          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/20 blur-3xl" />
-
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl">
-              <span className="mb-3 inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-500 dark:text-blue-400">
+              <span
+                className="
+                  mb-3
+                  inline-block
+                  rounded-full
+                  border
+                  border-blue-500/20
+                  bg-blue-500/10
+                  px-4
+                  py-1
+                  text-sm
+                  font-medium
+                  text-blue-500
+                  dark:text-blue-400
+                "
+              >
                 {servicesSection.cta.badge}
               </span>
 
@@ -97,7 +107,21 @@ const Services = () => {
 
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20"
+              className="
+                group
+                inline-flex
+                items-center
+                gap-2
+                rounded-xl
+                bg-blue-600
+                px-7
+                py-4
+                font-semibold
+                text-white
+                transition-all
+                duration-300
+                hover:bg-blue-700
+              "
             >
               {servicesSection.cta.button}
 

@@ -65,7 +65,13 @@ export default function About() {
             {about.intro.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mb-6 leading-8 text-slate-600 dark:text-slate-400"
+                className="
+                  mb-6
+                  text-justify
+                  leading-8
+                  text-slate-600
+                  dark:text-slate-400
+                "
               >
                 {paragraph}
               </p>

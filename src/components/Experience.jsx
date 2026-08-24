@@ -3,7 +3,6 @@ import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
 import ExperienceCard from "./ExperienceCard";
 import { experiences } from "../data/experience";
-import BackgroundGlow from "./ui/BackgroundGlow";
 import { experienceSection } from "../data/experienceSection";
 
 const Experience = () => {
@@ -22,8 +21,7 @@ const Experience = () => {
         dark:text-white
       "
     >
-      {/* Background Glow */}
-      <BackgroundGlow />
+     
 
       <Container>
         <SectionTitle

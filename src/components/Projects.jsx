@@ -3,7 +3,6 @@ import { FiArrowRight } from "react-icons/fi";
 
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
-import BackgroundGlow from "./ui/BackgroundGlow";
 import FeaturedProject from "./FeaturedProject";
 import ProjectCard from "./ProjectCard";
 
@@ -38,7 +37,6 @@ const Projects = () => {
         dark:text-white
       "
     >
-      <BackgroundGlow />
 
       <Container>
         {/* Heading */}
