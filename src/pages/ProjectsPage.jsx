@@ -70,31 +70,7 @@ export default function ProjectsPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              {github && (
-                <a
-                  href={github.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    rounded-xl
-                    bg-blue-600
-                    px-6
-                    py-3
-                    font-semibold
-                    text-white
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:bg-blue-700
-                  "
-                >
-                  <FiGithub />
-                  GitHub
-                </a>
-              )}
+              
 
               <a
                 href="#project-list"
