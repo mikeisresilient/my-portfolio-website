@@ -52,7 +52,7 @@ export default function Hero() {
               className="
                 mb-8
                 mt-20
-                flex
+                inline-flex
                 w-fit
                 max-w-full
                 items-center
@@ -61,11 +61,11 @@ export default function Hero() {
                 border
                 border-green-500/30
                 bg-green-500/10
-                px-4
+                px-3.5
                 py-2
                 text-left
                 sm:gap-3
-                sm:px-5
+                sm:px-4
                 sm:py-2.5
               "
             >
@@ -73,12 +73,14 @@ export default function Hero() {
 
               <span
                 className="
-                  text-sm
+                  whitespace-nowrap
+                  text-xs
                   font-medium
                   leading-5
                   text-green-600
                   dark:text-green-300
-                  sm:text-base
+                  sm:text-sm
+                  md:text-base
                 "
               >
                 {profile.availability}

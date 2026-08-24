@@ -1,4 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import Container from "./ui/Container";
 
@@ -45,8 +46,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {footer.quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="
                       text-slate-600
                       transition-colors
@@ -57,7 +58,7 @@ const Footer = () => {
                     "
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -111,7 +112,11 @@ const Footer = () => {
 
                 <FiArrowUpRight
                   aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
                 />
               </a>
             </div>
@@ -153,6 +158,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
+                  title={social.name}
                   className="
                     text-slate-500
                     transition-colors

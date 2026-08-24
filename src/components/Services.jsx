@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
@@ -75,7 +76,19 @@ const Services = () => {
             lg:p-14
           "
         >
-          <div className="relative z-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+          <div
+            className="
+              relative
+              z-10
+              flex
+              flex-col
+              items-start
+              justify-between
+              gap-8
+              lg:flex-row
+              lg:items-center
+            "
+          >
             <div className="max-w-2xl">
               <span
                 className="
@@ -96,20 +109,37 @@ const Services = () => {
                 {servicesSection.cta.badge}
               </span>
 
-              <h3 className="text-3xl font-bold text-slate-900 dark:text-white lg:text-4xl">
+              <h3
+                className="
+                  text-3xl
+                  font-bold
+                  text-slate-900
+                  dark:text-white
+                  lg:text-4xl
+                "
+              >
                 {servicesSection.cta.title}
               </h3>
 
-              <p className="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+              <p
+                className="
+                  mt-4
+                  leading-8
+                  text-slate-600
+                  dark:text-slate-300
+                "
+              >
                 {servicesSection.cta.description}
               </p>
             </div>
 
-            <a
-              href="#contact"
+            {/* CTA Button */}
+            <Link
+              to="/contact"
               className="
                 group
                 inline-flex
+                shrink-0
                 items-center
                 gap-2
                 rounded-xl
@@ -126,10 +156,14 @@ const Services = () => {
               {servicesSection.cta.button}
 
               <FiArrowRight
-                className="transition-transform duration-300 group-hover:translate-x-1"
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
                 aria-hidden="true"
               />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </Container>

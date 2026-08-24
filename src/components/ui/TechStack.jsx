@@ -26,6 +26,7 @@ export default function TechStack() {
               className="
                 flex
                 min-w-0
+                w-full
                 items-center
                 gap-2.5
                 rounded-xl
@@ -44,8 +45,10 @@ export default function TechStack() {
                 dark:bg-white/5
                 dark:shadow-none
                 dark:hover:bg-white/10
+                sm:px-4
               "
             >
+              {/* Icon */}
               <div
                 className="
                   flex
@@ -65,14 +68,16 @@ export default function TechStack() {
                 />
               </div>
 
+              {/* Full Technology Name */}
               <span
                 className="
                   min-w-0
-                  truncate
-                  text-sm
+                  whitespace-nowrap
+                  text-xs
                   font-medium
                   text-slate-700
                   dark:text-slate-300
+                  sm:text-sm
                 "
                 title={tech.name}
               >

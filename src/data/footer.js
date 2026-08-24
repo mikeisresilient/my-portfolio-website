@@ -3,11 +3,26 @@ export const footer = {
     "Building scalable web and mobile applications, blockchain solutions, and digital experiences that turn ideas into impactful products.",
 
   quickLinks: [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "Services", href: "#services" },
-    { label: "Contact", href: "#contact" },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
+      label: "Projects",
+      href: "/projects",
+    },
+    {
+      label: "Experience",
+      href: "/experience",
+    },
+    {
+      label: "Services",
+      href: "/services",
+    },
+    {
+      label: "Contact",
+      href: "/contact",
+    },
   ],
 
   builtWith: [
