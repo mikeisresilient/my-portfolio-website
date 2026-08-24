@@ -109,8 +109,6 @@ const Projects = () => {
                 hover:border-blue-500
                 hover:bg-blue-600
                 hover:text-white
-                hover:shadow-lg
-                hover:shadow-blue-500/30
                 dark:text-blue-400
               "
             >

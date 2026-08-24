@@ -3,7 +3,6 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 
-import ScrollProgress from "./components/ui/ScrollProgress";
 import BackToTop from "./components/ui/BackToTop";
 
 import SEO from "./components/SEO";
@@ -29,7 +28,6 @@ function App() {
       <SEO />
 
 
-      <ScrollProgress />
 
       <Navbar />
 
