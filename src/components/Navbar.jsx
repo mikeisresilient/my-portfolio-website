@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -15,41 +15,13 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const location = useLocation();
+
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const [darkMode, setDarkMode] = useState(() =>
     document.documentElement.classList.contains("dark"),
   );
-
-  /* Navbar background on scroll */
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  /* Prevent page scrolling while menu is open */
-  useEffect(() => {
-    if (open) {
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-    } else {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-    };
-  }, [open]);
 
   /* Toggle theme */
   const toggleTheme = () => {
@@ -68,62 +40,82 @@ export default function Navbar() {
     );
   };
 
+  /* Close mobile menu */
+  const closeMenu = () => {
+    setOpen(false);
+  };
+
+  /* Active navigation item */
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    if (path.includes("#")) {
+      return location.pathname === path.split("#")[0];
+    }
+
+    return location.pathname === path;
+  };
+
   return (
     <>
-      {/* Navbar */}
+      {/* =========================
+          NAVBAR
+      ========================== */}
       <nav
-        className={`
+        className="
           fixed
-          left-0
-          right-0
+          inset-x-0
           top-0
           z-50
-          transition-all
+          border-b
+          border-transparent
+          bg-white/80
+          backdrop-blur-xl
+          transition-colors
           duration-300
-
-          ${
-            scrolled
-              ? `
-                border-b
-                border-slate-200
-                bg-white/85
-                backdrop-blur-xl
-                dark:border-white/10
-                dark:bg-slate-950/85
-              `
-              : `
-                bg-transparent
-              `
-          }
-        `}
+          dark:border-white/5
+          dark:bg-slate-950/80
+        "
       >
         <div
           className="
             mx-auto
             flex
+            h-16
+            w-full
             max-w-7xl
             items-center
             justify-between
-            px-5
-            py-4
+            gap-3
+            px-4
+            sm:h-18
             sm:px-6
-            sm:py-5
+            lg:px-8
           "
         >
-          {/* Logo */}
+          {/* =========================
+              LOGO
+          ========================== */}
           <Link
             to="/"
-            onClick={() => setOpen(false)}
+            onClick={closeMenu}
             className="
+              min-w-0
+              shrink
               cursor-pointer
-              text-lg
+              whitespace-nowrap
+              text-base
               font-bold
               tracking-wide
               text-slate-900
+              transition-colors
+              hover:text-blue-500
               dark:text-white
-              sm:text-xl
-              md:ml-5
-              md:text-2xl
+              dark:hover:text-blue-400
+              sm:text-lg
+              lg:text-xl
             "
           >
             Mike{" "}
@@ -132,29 +124,52 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 md:flex">
+          {/* =========================
+              DESKTOP NAVIGATION
+          ========================== */}
+          <div
+            className="
+              hidden
+              items-center
+              gap-4
+              lg:flex
+              xl:gap-7
+            "
+          >
             {navLinks.map((item) => (
               <Link
                 key={item.label}
                 to={item.to}
-                className="
-                  cursor-pointer
-                  text-slate-700
-                  transition
+                className={`
+                  whitespace-nowrap
+                  text-sm
+                  font-medium
+                  transition-colors
                   duration-300
-                  hover:text-blue-500
-                  dark:text-slate-200
-                  dark:hover:text-blue-400
-                "
+                  ${
+                    isActive(item.to)
+                      ? "text-blue-500 dark:text-blue-400"
+                      : "text-slate-600 hover:text-blue-500 dark:text-slate-300 dark:hover:text-blue-400"
+                  }
+                `}
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* Right Controls */}
-          <div className="flex items-center gap-3">
+          {/* =========================
+              RIGHT CONTROLS
+          ========================== */}
+          <div
+            className="
+              flex
+              shrink-0
+              items-center
+              gap-2
+              sm:gap-3
+            "
+          >
             {/* Theme Toggle */}
             <button
               type="button"
@@ -171,8 +186,9 @@ export default function Navbar() {
               }
               className="
                 flex
-                h-10
-                w-10
+                h-9
+                w-9
+                shrink-0
                 items-center
                 justify-center
                 rounded-xl
@@ -183,7 +199,6 @@ export default function Navbar() {
                 shadow-sm
                 transition-all
                 duration-300
-                hover:-translate-y-0.5
                 hover:border-blue-500
                 hover:text-blue-500
                 dark:border-slate-700
@@ -193,13 +208,13 @@ export default function Navbar() {
               "
             >
               {darkMode ? (
-                <FiSun size={19} />
+                <FiSun size={17} />
               ) : (
-                <FiMoon size={19} />
+                <FiMoon size={17} />
               )}
             </button>
 
-            {/* Desktop Resume */}
+            {/* Resume */}
             <a
               href="/resume.pdf"
               target="_blank"
@@ -208,13 +223,15 @@ export default function Navbar() {
                 hidden
                 rounded-xl
                 bg-blue-600
-                px-5
+                px-4
                 py-2
+                text-sm
                 font-medium
                 text-white
                 transition
                 hover:bg-blue-700
-                md:block
+                lg:block
+                xl:px-5
               "
             >
               Resume
@@ -226,16 +243,15 @@ export default function Navbar() {
               onClick={() => setOpen((prev) => !prev)}
               aria-label={
                 open
-                  ? "Close navigation"
-                  : "Open navigation"
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
               }
               aria-expanded={open}
               className="
-                relative
-                z-110
                 flex
-                h-10
-                w-10
+                h-9
+                w-9
+                shrink-0
                 items-center
                 justify-center
                 rounded-xl
@@ -243,225 +259,206 @@ export default function Navbar() {
                 border-slate-200
                 bg-white
                 text-slate-800
-                transition-all
-                duration-300
+                transition
                 hover:border-blue-500
                 hover:text-blue-500
                 dark:border-slate-700
                 dark:bg-slate-900
                 dark:text-white
-                dark:hover:border-blue-500
-                md:hidden
+                lg:hidden
               "
             >
               {open ? (
-                <HiX size={25} />
+                <HiX size={23} />
               ) : (
-                <HiMenuAlt3 size={25} />
+                <HiMenuAlt3 size={23} />
               )}
             </button>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Floating Menu */}
-        <AnimatePresence>
-          {open && (
-            <>
-              {/* Background click area */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                onClick={() => setOpen(false)}
-                className="
-                  fixed
-                  inset-0
-                  top-[72px]
-                  z-45
-                  bg-black/10
-                  dark:bg-black/30
-                  md:hidden
-                "
-              />
+      {/* =========================
+          MOBILE MENU
+      ========================== */}
+      <AnimatePresence>
+        {open && (
+          <>
+            {/* Backdrop */}
+            <motion.button
+              type="button"
+              aria-label="Close navigation menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMenu}
+              className="
+                fixed
+                inset-0
+                z-40
+                bg-black/20
+                backdrop-blur-[2px]
+                lg:hidden
+              "
+            />
 
-              {/* Menu Panel */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: -12,
-                  scale: 0.97,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: -12,
-                  scale: 0.97,
-                }}
-                transition={{
-                  duration: 0.22,
-                  ease: "easeOut",
-                }}
-                className="
-                  absolute
-                  right-4
-                  top-full
-                  z-100
-                  mt-3
-                  w-[calc(100vw-2rem)]
-                  max-w-[360px]
-                  overflow-hidden
-                  rounded-3xl
-                  border
-                  border-slate-200
-                  bg-white
-                  p-3
-                  shadow-2xl
-                  shadow-slate-900/10
-                  dark:border-white/10
-                  dark:bg-slate-900
-                  dark:shadow-black/30
-                  md:hidden
-                "
-              >
-                {/* Menu Header */}
-                <div
+            {/* Menu Panel */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -15,
+                scale: 0.97,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                y: -15,
+                scale: 0.97,
+              }}
+              transition={{
+                duration: 0.2,
+                ease: "easeOut",
+              }}
+              className="
+                fixed
+                right-3
+                top-19
+                z-50
+                w-[calc(100%-1.5rem)]
+                max-w-sm
+                overflow-hidden
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                p-3
+                shadow-2xl
+                dark:border-slate-800
+                dark:bg-slate-950
+                lg:hidden
+              "
+            >
+              {/* Navigation Links */}
+              <div className="space-y-1">
+                {navLinks.map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{
+                      opacity: 0,
+                      x: 10,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      delay: index * 0.04,
+                    }}
+                  >
+                    <Link
+                      to={item.to}
+                      onClick={closeMenu}
+                      className={`
+                        flex
+                        w-full
+                        items-center
+                        rounded-xl
+                        px-4
+                        py-3
+                        text-sm
+                        font-medium
+                        transition-colors
+                        ${
+                          isActive(item.to)
+                            ? "bg-blue-500/10 text-blue-500 dark:text-blue-400"
+                            : "text-slate-700 hover:bg-slate-100 hover:text-blue-500 dark:text-slate-200 dark:hover:bg-white/5 dark:hover:text-blue-400"
+                        }
+                      `}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div className="my-3 h-px bg-slate-200 dark:bg-white/10" />
+
+              {/* Bottom Controls */}
+              <div className="flex items-center gap-2">
+                {/* Theme */}
+                <button
+                  type="button"
+                  onClick={toggleTheme}
                   className="
-                    mb-2
                     flex
+                    flex-1
                     items-center
-                    justify-between
-                    border-b
+                    justify-center
+                    gap-2
+                    rounded-xl
+                    border
                     border-slate-200
+                    bg-slate-50
                     px-3
-                    pb-3
-                    dark:border-white/10
+                    py-3
+                    text-sm
+                    font-medium
+                    text-slate-700
+                    transition
+                    hover:border-blue-500
+                    hover:text-blue-500
+                    dark:border-slate-800
+                    dark:bg-slate-900
+                    dark:text-slate-200
                   "
                 >
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                      Navigation
-                    </p>
-
-                    <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-                      Explore my portfolio
-                    </p>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={toggleTheme}
-                    className="
-                      flex
-                      h-9
-                      w-9
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-slate-200
-                      bg-slate-100
-                      text-slate-700
-                      transition
-                      hover:border-blue-500
-                      hover:text-blue-500
-                      dark:border-slate-700
-                      dark:bg-slate-800
-                      dark:text-yellow-300
-                    "
-                    aria-label="Toggle theme"
-                  >
-                    {darkMode ? (
-                      <FiSun size={17} />
-                    ) : (
-                      <FiMoon size={17} />
-                    )}
-                  </button>
-                </div>
-
-                {/* Navigation Links */}
-                <div className="space-y-1">
-                  {navLinks.map((item, index) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{
-                        opacity: 0,
-                        x: 15,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        x: 0,
-                      }}
-                      transition={{
-                        delay: index * 0.04,
-                        duration: 0.2,
-                      }}
-                    >
-                      <Link
-                        to={item.to}
-                        onClick={() => setOpen(false)}
-                        className="
-                          flex
-                          w-full
-                          items-center
-                          rounded-xl
-                          px-4
-                          py-3
-                          text-base
-                          font-medium
-                          text-slate-700
-                          transition-all
-                          duration-200
-                          hover:bg-slate-100
-                          hover:text-blue-500
-                          dark:text-slate-200
-                          dark:hover:bg-slate-800
-                          dark:hover:text-blue-400
-                        "
-                      >
-                        {item.label}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Divider */}
-                <div className="my-3 h-px bg-slate-200 dark:bg-white/10" />
+                  {darkMode ? (
+                    <>
+                      <FiSun className="text-yellow-400" />
+                      Light
+                    </>
+                  ) : (
+                    <>
+                      <FiMoon className="text-blue-500" />
+                      Dark
+                    </>
+                  )}
+                </button>
 
                 {/* Resume */}
                 <a
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
+                  onClick={closeMenu}
                   className="
                     flex
-                    w-full
+                    flex-1
                     items-center
                     justify-center
                     rounded-xl
                     bg-blue-600
-                    px-4
+                    px-3
                     py-3
+                    text-sm
                     font-semibold
                     text-white
-                    transition-all
-                    duration-300
-                    hover:-translate-y-0.5
+                    transition
                     hover:bg-blue-700
                   "
                 >
-                  View Resume
+                  Resume
                 </a>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-      </nav>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
