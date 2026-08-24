@@ -1,50 +1,35 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
-import BackToTop from "./components/ui/BackToTop";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ExperiencePage from "./pages/ExperiencePage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
 
-import SEO from "./components/SEO";
-
-const About = lazy(() => import("./components/About"));
-const Projects = lazy(() => import("./components/Projects"));
-const Experience = lazy(() => import("./components/Experience"));
-const Services = lazy(() => import("./components/Services"));
-const Contact = lazy(() => import("./components/Contact"));
-const Footer = lazy(() => import("./components/Footer"));
-
-function App() {
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
-
+export default function App() {
   return (
-    <>
-      <SEO />
-
-
+    <BrowserRouter>
+      <ScrollToTop />
 
       <Navbar />
 
-      <Hero />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </main>
 
-      <Suspense fallback={null}>
-        <About />
-        <Projects />
-        <Experience />
-        <Services />
-        <Contact />
-        <Footer />
-      </Suspense>
-
-      <BackToTop />
-    </>
+      <Footer />
+    </BrowserRouter>
   );
 }
-
-export default App;
