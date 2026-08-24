@@ -6,10 +6,26 @@ const ProjectCard = ({ project }) => {
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
-      className="group mb-8 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-md"
+      className="
+        group
+        mb-8
+        break-inside-avoid
+        overflow-hidden
+        rounded-2xl
+        border
+        border-slate-200
+        bg-white
+        shadow-sm
+        backdrop-blur-md
+        transition-colors
+        duration-300
+        dark:border-slate-800
+        dark:bg-slate-900/60
+        dark:shadow-none
+      "
     >
       {/* Image */}
-      <div className="w-full overflow-hidden rounded-t-2xl bg-slate-950">
+      <div className="w-full overflow-hidden rounded-t-2xl bg-slate-100 dark:bg-slate-950">
         <img
           src={project.image}
           alt={project.title}
@@ -20,11 +36,11 @@ const ProjectCard = ({ project }) => {
       {/* Content */}
       <div className="space-y-5 p-6">
         <div>
-          <h3 className="mb-2 text-xl font-bold text-white">
+          <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">
             {project.title}
           </h3>
 
-          <p className="text-sm leading-7 text-slate-400">
+          <p className="text-sm leading-7 text-slate-600 dark:text-slate-400">
             {project.description}
           </p>
         </div>
@@ -34,7 +50,18 @@ const ProjectCard = ({ project }) => {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300"
+              className="
+                rounded-full
+                border
+                border-blue-500/20
+                bg-blue-500/10
+                px-3
+                py-1
+                text-xs
+                font-medium
+                text-blue-500
+                dark:text-blue-300
+              "
             >
               {tech}
             </span>
@@ -47,7 +74,24 @@ const ProjectCard = ({ project }) => {
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2 text-sm text-slate-300 transition hover:border-blue-500 hover:text-white"
+            className="
+              flex
+              items-center
+              gap-2
+              rounded-lg
+              border
+              border-slate-300
+              px-4
+              py-2
+              text-sm
+              text-slate-700
+              transition
+              hover:border-blue-500
+              hover:text-blue-600
+              dark:border-slate-700
+              dark:text-slate-300
+              dark:hover:text-white
+            "
           >
             <FiGithub />
             GitHub

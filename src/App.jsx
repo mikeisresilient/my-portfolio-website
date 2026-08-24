@@ -3,7 +3,6 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 
-import LoadingScreen from "./components/ui/LoadingScreen";
 import ScrollProgress from "./components/ui/ScrollProgress";
 import BackToTop from "./components/ui/BackToTop";
 
@@ -17,11 +16,9 @@ const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false);
     }, 1200);
 
     return () => clearTimeout(timer);
@@ -31,7 +28,6 @@ function App() {
     <>
       <SEO />
 
-      <LoadingScreen isLoading={isLoading} />
 
       <ScrollProgress />
 

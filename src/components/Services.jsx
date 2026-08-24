@@ -13,9 +13,20 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-slate-950 py-28"
+      className="
+        relative
+        overflow-hidden
+        bg-white
+        py-28
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+        dark:text-white
+      "
     >
       <BackgroundGlow />
+
       <Container>
         <SectionTitle
           badge={servicesSection.badge}
@@ -36,7 +47,7 @@ const Services = () => {
               <ServiceCard key={service.id} service={service} />
             ))
           ) : (
-            <p className="col-span-full text-center text-slate-400">
+            <p className="col-span-full text-center text-slate-500 dark:text-slate-400">
               Services will be added soon.
             </p>
           )}
@@ -48,35 +59,52 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative mt-24 overflow-hidden rounded-3xl border border-blue-500/20 bg-gradient-to-r from-blue-600/10 to-violet-600/10 p-10 lg:p-14"
+          className="
+            relative
+            mt-24
+            overflow-hidden
+            rounded-3xl
+            border
+            border-blue-500/20
+            bg-linear-to-r
+            from-blue-600/10
+            to-violet-600/10
+            p-10
+            transition-colors
+            duration-300
+            dark:from-blue-600/10
+            dark:to-violet-600/10
+            lg:p-14
+          "
         >
           {/* Glow */}
           <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/20 blur-3xl" />
 
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-2xl">
-              <span className="mb-3 inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-400">
+              <span className="mb-3 inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-500 dark:text-blue-400">
                 {servicesSection.cta.badge}
               </span>
 
-              <h3 className="text-3xl font-bold text-white lg:text-4xl">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white lg:text-4xl">
                 {servicesSection.cta.title}
               </h3>
 
-              <p className="mt-4 leading-8 text-slate-300">
+              <p className="mt-4 leading-8 text-slate-600 dark:text-slate-300">
                 {servicesSection.cta.description}
               </p>
             </div>
 
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-blue-700"
+              className="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20"
             >
               {servicesSection.cta.button}
+
               <FiArrowRight
                 className="transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden="true"
-              />{" "}
+              />
             </a>
           </div>
         </motion.div>

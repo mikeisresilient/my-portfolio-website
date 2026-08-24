@@ -22,11 +22,11 @@ export default function SectionTitle({
       }}
       className="mb-16 text-center"
     >
-      <p className="uppercase tracking-[4px] text-blue-400 text-sm">
+      <p className="text-sm uppercase tracking-[4px] text-blue-500 dark:text-blue-400">
         {subtitle}
       </p>
 
-      <h2 className="text-4xl lg:text-5xl font-black mt-4">
+      <h2 className="mt-4 text-4xl font-black text-slate-900 dark:text-white lg:text-5xl">
         {title}
       </h2>
     </motion.div>

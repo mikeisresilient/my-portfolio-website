@@ -45,7 +45,6 @@ The application emphasizes clean UI, smooth animations, excellent user experienc
 - 🛠 Services Section
 - 👨‍💻 Technology Stack Display
 - 📧 Functional Contact Form powered by EmailJS
-- 🔥 Loading Screen
 - 📊 Scroll Progress Indicator
 - ⬆ Back to Top Button
 - 🔍 SEO Optimized

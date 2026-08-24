@@ -6,6 +6,23 @@ import { Toaster } from "react-hot-toast";
 import "./index.css";
 import App from "./App";
 
+/*
+  Theme initialization
+
+  Dark mode is the default.
+  Light mode is only activated when the user
+  has explicitly selected it.
+*/
+
+const savedTheme = localStorage.getItem("theme");
+
+const theme = savedTheme || "dark";
+
+document.documentElement.classList.toggle(
+  "dark",
+  theme === "dark"
+);
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HelmetProvider>

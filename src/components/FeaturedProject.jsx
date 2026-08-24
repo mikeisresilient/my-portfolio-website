@@ -8,10 +8,24 @@ const FeaturedProject = ({ project }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="group overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 backdrop-blur-md"
+      className="
+        group
+        overflow-hidden
+        rounded-3xl
+        border
+        border-slate-200
+        bg-white
+        shadow-sm
+        backdrop-blur-md
+        transition-colors
+        duration-300
+        dark:border-slate-800
+        dark:bg-slate-900/60
+        dark:shadow-none
+      "
     >
       {/* Project Image */}
-      <div className="w-full overflow-hidden rounded-t-3xl bg-slate-950">
+      <div className="w-full overflow-hidden rounded-t-3xl bg-slate-100 dark:bg-slate-950">
         <img
           src={project.image}
           alt={project.title}
@@ -22,40 +36,80 @@ const FeaturedProject = ({ project }) => {
       {/* Content */}
       <div className="p-6 sm:p-8 lg:p-12">
         {/* Badge */}
-        <span className="mb-4 inline-flex w-fit rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-400">
+        <span
+          className="
+            mb-4
+            inline-flex
+            w-fit
+            rounded-full
+            border
+            border-blue-500/20
+            bg-blue-500/10
+            px-4
+            py-1
+            text-sm
+            font-medium
+            text-blue-500
+            dark:text-blue-400
+          "
+        >
           ⭐ Featured Project
         </span>
 
         {/* Title */}
-        <h2 className="mb-4 text-3xl font-bold text-white lg:text-4xl">
+        <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white lg:text-4xl">
           {project.title}
         </h2>
 
         {/* Description */}
-        <p className="mb-8 max-w-4xl leading-8 text-slate-400">
+        <p className="mb-8 max-w-4xl leading-8 text-slate-600 dark:text-slate-400">
           {project.description}
         </p>
 
         {/* Challenge & Solution */}
         <div className="grid gap-6 md:grid-cols-2">
           {/* Challenge */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-            <h3 className="mb-2 text-lg font-semibold text-white">
+          <div
+            className="
+              rounded-2xl
+              border
+              border-slate-200
+              bg-slate-50
+              p-5
+              transition-colors
+              duration-300
+              dark:border-slate-800
+              dark:bg-slate-950/40
+            "
+          >
+            <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">
               Challenge
             </h3>
 
-            <p className="leading-7 text-slate-400">
+            <p className="leading-7 text-slate-600 dark:text-slate-400">
               {project.challenge}
             </p>
           </div>
 
           {/* Solution */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-            <h3 className="mb-2 text-lg font-semibold text-white">
+          <div
+            className="
+              rounded-2xl
+              border
+              border-slate-200
+              bg-slate-50
+              p-5
+              transition-colors
+              duration-300
+              dark:border-slate-800
+              dark:bg-slate-950/40
+            "
+          >
+            <h3 className="mb-2 text-lg font-semibold text-slate-900 dark:text-white">
               Solution
             </h3>
 
-            <p className="leading-7 text-slate-400">
+            <p className="leading-7 text-slate-600 dark:text-slate-400">
               {project.solution}
             </p>
           </div>
@@ -63,7 +117,7 @@ const FeaturedProject = ({ project }) => {
 
         {/* Technologies */}
         <div className="mt-8">
-          <h3 className="mb-4 text-lg font-semibold text-white">
+          <h3 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
             Technologies
           </h3>
 
@@ -71,7 +125,17 @@ const FeaturedProject = ({ project }) => {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-sm text-blue-300"
+                className="
+                  rounded-full
+                  border
+                  border-blue-500/20
+                  bg-blue-500/10
+                  px-3
+                  py-1
+                  text-sm
+                  text-blue-500
+                  dark:text-blue-300
+                "
               >
                 {tech}
               </span>
@@ -97,7 +161,24 @@ const FeaturedProject = ({ project }) => {
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-6 py-3 font-medium text-slate-300 transition hover:border-blue-500 hover:text-white"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-xl
+              border
+              border-slate-300
+              px-6
+              py-3
+              font-medium
+              text-slate-700
+              transition
+              hover:border-blue-500
+              hover:text-blue-600
+              dark:border-slate-700
+              dark:text-slate-300
+              dark:hover:text-white
+            "
           >
             GitHub
             <FiGithub />
@@ -105,13 +186,13 @@ const FeaturedProject = ({ project }) => {
         </div>
 
         {/* Key Outcome */}
-        <div className="mt-10 border-t border-slate-800 pt-6">
-          <div className="flex items-center gap-2 font-medium text-blue-400">
+        <div className="mt-10 border-t border-slate-200 pt-6 dark:border-slate-800">
+          <div className="flex items-center gap-2 font-medium text-blue-500 dark:text-blue-400">
             Key Outcome
             <FiArrowRight />
           </div>
 
-          <p className="mt-2 max-w-4xl leading-7 text-slate-400">
+          <p className="mt-2 max-w-4xl leading-7 text-slate-600 dark:text-slate-400">
             Delivered a fast, responsive, and visually engaging web
             experience that strengthens the brand's online presence while
             maintaining excellent performance across desktop and mobile

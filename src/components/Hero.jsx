@@ -12,16 +12,28 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-slate-950"
+      className="
+        relative
+        flex
+        min-h-screen
+        items-center
+        overflow-hidden
+        bg-white
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+        dark:text-white
+      "
     >
       <BackgroundGlow />
 
       {/* Grid */}
       <div
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.05] dark:opacity-[0.05]"
         style={{
           backgroundImage:
-            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right,#ffffff 1px, transparent 1px)",
+            "linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(to right, var(--grid-color) 1px, transparent 1px)",
           backgroundSize: "70px 70px",
         }}
       />
@@ -61,16 +73,16 @@ export default function Hero() {
             >
               <span className="h-2.5 w-2.5 shrink-0 animate-ping rounded-full bg-green-400" />
 
-              <span className="text-sm font-medium leading-5 text-green-300 sm:text-base">
+              <span className="text-sm font-medium leading-5 text-green-600 dark:text-green-300 sm:text-base">
                 {profile.availability}
               </span>
             </motion.div>
 
-            <p className="mb-3 text-lg text-blue-400">
+            <p className="mb-3 text-lg text-blue-500 dark:text-blue-400">
               {profile.heroGreeting}
             </p>
 
-            <h1 className="text-5xl font-black leading-tight md:text-7xl">
+            <h1 className="text-5xl font-black leading-tight text-slate-900 dark:text-white md:text-7xl">
               {profile.firstName}{" "}
               <span className="text-blue-500">{profile.lastName}</span>
             </h1>
@@ -80,10 +92,10 @@ export default function Hero() {
               wrapper="h2"
               speed={40}
               repeat={Infinity}
-              className="mt-6 text-2xl font-semibold text-slate-300 md:text-3xl"
+              className="mt-6 text-2xl font-semibold text-slate-700 dark:text-slate-300 md:text-3xl"
             />
 
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
+            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-400">
               {profile.heroDescription}
             </p>
 
@@ -91,7 +103,7 @@ export default function Hero() {
             <div className="mt-10 flex flex-wrap gap-5">
               <a
                 href={profile.cta.primary.href}
-                className="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-medium transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30"
+                className="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-medium text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30"
               >
                 {profile.cta.primary.label}
 
@@ -102,7 +114,25 @@ export default function Hero() {
                 href={profile.cta.secondary.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-white/10 px-7 py-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-white/10 hover:shadow-lg hover:shadow-white/10"
+                className="
+                  rounded-xl
+                  border
+                  border-slate-300
+                  px-7
+                  py-4
+                  text-slate-700
+                  transition-all
+                  duration-300
+                  ease-out
+                  hover:-translate-y-1
+                  hover:bg-slate-100
+                  hover:shadow-lg
+                  hover:shadow-slate-300/30
+                  dark:border-white/10
+                  dark:text-white
+                  dark:hover:bg-white/10
+                  dark:hover:shadow-white/10
+                "
               >
                 {profile.cta.secondary.label}
               </a>
@@ -129,14 +159,19 @@ export default function Hero() {
                       justify-center
                       rounded-xl
                       border
-                      border-white/10
-                      bg-white/5
+                      border-slate-200
+                      bg-slate-100
+                      text-slate-700
                       transition
                       duration-300
                       hover:-translate-y-1
                       hover:bg-blue-600
+                      hover:text-white
                       hover:shadow-lg
                       hover:shadow-blue-500/20
+                      dark:border-white/10
+                      dark:bg-white/5
+                      dark:text-white
                     "
                   >
                     <Icon size={20} aria-hidden="true" />
@@ -151,13 +186,27 @@ export default function Hero() {
                 <motion.div
                   key={stat.label}
                   whileHover={{ y: -5 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl"
+                  className="
+                    rounded-2xl
+                    border
+                    border-slate-200
+                    bg-slate-100
+                    p-5
+                    text-center
+                    shadow-sm
+                    backdrop-blur-xl
+                    transition-colors
+                    duration-300
+                    dark:border-white/10
+                    dark:bg-white/5
+                    dark:shadow-none
+                  "
                 >
-                  <h3 className="text-2xl font-bold text-blue-400">
+                  <h3 className="text-2xl font-bold text-blue-500 dark:text-blue-400">
                     {stat.number}
                   </h3>
 
-                  <p className="mt-1 text-sm text-slate-400">
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                     {stat.label}
                   </p>
                 </motion.div>
@@ -184,7 +233,7 @@ export default function Hero() {
                 <div className="absolute -inset-2 animate-pulse rounded-full bg-linear-to-r from-blue-500 via-cyan-500 to-purple-500 opacity-60 blur-xl" />
 
                 {/* Profile */}
-                <div className="relative rounded-full border border-white/10 bg-slate-900 p-2 transition-transform duration-500 hover:scale-[1.02]">
+                <div className="relative rounded-full border border-slate-200 bg-white p-2 transition-transform duration-500 hover:scale-[1.02] dark:border-white/10 dark:bg-slate-900">
                   <img
                     src={profileImage}
                     alt={profile.profileImageAlt}
@@ -213,7 +262,26 @@ export default function Hero() {
                         duration: 3 + index,
                         ease: "easeInOut",
                       }}
-                      className={`absolute ${badge.position} flex items-center gap-2 rounded-xl border border-white/10 bg-white/10 px-4 py-2 backdrop-blur-xl`}
+                      className={`
+                        absolute
+                        ${badge.position}
+                        flex
+                        items-center
+                        gap-2
+                        rounded-xl
+                        border
+                        border-slate-200
+                        bg-white/90
+                        px-4
+                        py-2
+                        text-slate-700
+                        shadow-lg
+                        backdrop-blur-xl
+                        dark:border-white/10
+                        dark:bg-white/10
+                        dark:text-white
+                        dark:shadow-none
+                      `}
                     >
                       <Icon className={`${badge.color} text-base`} />
 
@@ -239,11 +307,11 @@ export default function Hero() {
         }}
         className="absolute bottom-8 left-1/2 flex -translate-x-1/10 flex-col items-center"
       >
-        <span className="mb-3 ml-5 text-xs text-slate-500">
+        <span className="mb-3 ml-5 text-xs text-slate-500 dark:text-slate-500">
           Scroll to discover my journey
         </span>
 
-        <div className="flex h-12 w-7 justify-center rounded-full border-2 border-slate-500">
+        <div className="flex h-12 w-7 justify-center rounded-full border-2 border-slate-400 dark:border-slate-500">
           <motion.div
             animate={{
               y: [4, 18, 4],

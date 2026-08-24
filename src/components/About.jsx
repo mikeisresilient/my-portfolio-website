@@ -10,13 +10,25 @@ import { about } from "../data/about";
 
 export default function About() {
   return (
-    <section id="about" className="py-28 bg-slate-950 relative overflow-hidden">
+    <section
+      id="about"
+      className="
+        relative
+        overflow-hidden
+        bg-white
+        py-28
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+        dark:text-white
+      "
+    >
       <Container>
         <SectionTitle subtitle="About Me" title={about.heading} />
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left */}
-
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -24,44 +36,82 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative flex justify-center"
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 rounded-3xl blur-3xl" />
+            <div className="absolute -inset-4 rounded-3xl bg-linear-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 blur-3xl" />
 
             <GlassCard className="relative p-4">
               <img
                 src={profile}
                 alt="Michael Ege"
-                className="rounded-2xl w-full max-w-md object-cover"
+                className="w-full max-w-md rounded-2xl object-cover"
               />
             </GlassCard>
           </motion.div>
 
           {/* Right */}
-
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-3xl font-bold mb-6">
-              Hi, I'm <span className="text-blue-400">Michael Ege.</span>
+            <h3 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
+              Hi, I'm{" "}
+              <span className="text-blue-500 dark:text-blue-400">
+                Michael Ege.
+              </span>
             </h3>
 
+            {/* Introduction */}
             {about.intro.map((paragraph) => (
-              <p key={paragraph} className="mb-6 leading-8 text-slate-400">
+              <p
+                key={paragraph}
+                className="mb-6 leading-8 text-slate-600 dark:text-slate-400"
+              >
                 {paragraph}
               </p>
             ))}
 
-            <TechStack />
+            {/* Counters */}
+            <div className="mb-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {about.counters.map((counter) => (
+                <div
+                  key={counter.label}
+                  className="
+                    rounded-2xl
+                    border
+                    border-slate-200
+                    bg-slate-100
+                    p-4
+                    text-center
+                    shadow-sm
+                    transition-colors
+                    duration-300
+                    dark:border-white/10
+                    dark:bg-white/5
+                    dark:shadow-none
+                  "
+                >
+                  <div className="text-2xl font-bold text-blue-500 dark:text-blue-400">
+                    <AnimatedCounter
+                      end={counter.end}
+                      suffix={counter.suffix}
+                    />
+                  </div>
 
-            
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    {counter.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Tech Stack */}
+            <TechStack />
           </motion.div>
         </div>
 
-        {/* Cards */}
-
-        <div className="grid md:grid-cols-3 gap-8 mt-24">
+        {/* Highlight Cards */}
+        <div className="mt-24 grid gap-8 md:grid-cols-3">
           {about.highlights.map((item, index) => {
             const Icon = item.icon;
 
@@ -76,7 +126,7 @@ export default function About() {
                   delay: index * 0.2,
                 }}
               >
-                <GlassCard className="p-8 h-full">
+                <GlassCard className="h-full p-8">
                   <div className="mb-6">
                     <Icon
                       className={`${item.color} text-3xl`}
@@ -84,9 +134,13 @@ export default function About() {
                     />
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">
+                    {item.title}
+                  </h3>
 
-                  <p className="text-slate-400 leading-7">{item.description}</p>
+                  <p className="leading-7 text-slate-600 dark:text-slate-400">
+                    {item.description}
+                  </p>
                 </GlassCard>
               </motion.div>
             );

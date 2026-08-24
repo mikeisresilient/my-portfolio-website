@@ -10,23 +10,35 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
+    <footer
+      className="
+        border-t
+        border-slate-200
+        bg-white
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:border-slate-800
+        dark:bg-slate-950
+        dark:text-white
+      "
+    >
       <Container>
         <div className="grid gap-12 py-16 lg:grid-cols-3">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-white">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
               {profile.brand}
             </h3>
 
-            <p className="mt-5 leading-8 text-slate-400">
+            <p className="mt-5 leading-8 text-slate-600 dark:text-slate-400">
               {footer.tagline}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="mb-5 text-lg font-semibold text-white">
+            <h4 className="mb-5 text-lg font-semibold text-slate-900 dark:text-white">
               Quick Links
             </h4>
 
@@ -35,7 +47,14 @@ const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="transition-colors duration-300 hover:text-blue-400"
+                    className="
+                      text-slate-600
+                      transition-colors
+                      duration-300
+                      hover:text-blue-500
+                      dark:text-slate-400
+                      dark:hover:text-blue-400
+                    "
                   >
                     {link.label}
                   </a>
@@ -46,7 +65,7 @@ const Footer = () => {
 
           {/* Technologies */}
           <div>
-            <h4 className="mb-5 text-lg font-semibold text-white">
+            <h4 className="mb-5 text-lg font-semibold text-slate-900 dark:text-white">
               Built With
             </h4>
 
@@ -54,7 +73,17 @@ const Footer = () => {
               {footer.builtWith.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-sm text-blue-300"
+                  className="
+                    rounded-full
+                    border
+                    border-blue-500/20
+                    bg-blue-500/10
+                    px-3
+                    py-1
+                    text-sm
+                    text-blue-500
+                    dark:text-blue-300
+                  "
                 >
                   {tech}
                 </span>
@@ -66,7 +95,17 @@ const Footer = () => {
                 href={profile.portfolio}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-400 transition hover:text-blue-300"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-blue-500
+                  transition
+                  hover:text-blue-600
+                  dark:text-blue-400
+                  dark:hover:text-blue-300
+                "
               >
                 Visit Portfolio
 
@@ -79,7 +118,26 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800 py-6 text-sm text-slate-500 lg:flex-row">
+        {/* Copyright */}
+        <div
+          className="
+            flex
+            flex-col
+            items-center
+            justify-between
+            gap-4
+            border-t
+            border-slate-200
+            py-6
+            text-sm
+            text-slate-500
+            transition-colors
+            duration-300
+            dark:border-slate-800
+            dark:text-slate-500
+            lg:flex-row
+          "
+        >
           <p>
             © {currentYear} {site.author}. All rights reserved.
           </p>
@@ -95,7 +153,14 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="text-slate-400 transition-colors duration-300 hover:text-blue-400"
+                  className="
+                    text-slate-500
+                    transition-colors
+                    duration-300
+                    hover:text-blue-500
+                    dark:text-slate-400
+                    dark:hover:text-blue-400
+                  "
                 >
                   <Icon aria-hidden="true" />
                 </a>

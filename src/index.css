@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme variables */
+:root {
+  --grid-color: #0f172a;
+}
+
+.dark {
+  --grid-color: #ffffff;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -10,8 +21,18 @@ body {
   color: #f8fafc;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Light mode */
+html:not(.dark) body {
+  background: #f8fafc;
+  color: #0f172a;
 }

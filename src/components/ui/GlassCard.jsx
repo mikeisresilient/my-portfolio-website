@@ -15,10 +15,14 @@ export default function GlassCard({
       className={`
         rounded-3xl
         border
-        border-white/10
-        bg-white/5
-        backdrop-blur-xl
+        border-slate-200
+        bg-white
         shadow-xl
+        backdrop-blur-xl
+        transition-colors
+        duration-300
+        dark:border-white/10
+        dark:bg-white/5
         ${className}
       `}
     >

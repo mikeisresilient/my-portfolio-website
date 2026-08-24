@@ -10,7 +10,17 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-slate-950 py-28"
+      className="
+        relative
+        overflow-hidden
+        bg-white
+        py-28
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+        dark:text-white
+      "
     >
       {/* Background Glow */}
       <BackgroundGlow />
@@ -29,7 +39,20 @@ const Experience = () => {
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="absolute left-7 top-0 h-full w-[2px] origin-top bg-gradient-to-b from-blue-500 via-violet-500 to-transparent lg:left-1/2 lg:-translate-x-1/2"
+            className="
+              absolute
+              left-7
+              top-0
+              h-full
+              w-0.5
+              origin-top
+              bg-linear-to-b
+              from-blue-500
+              via-violet-500
+              to-transparent
+              lg:left-1/2
+              lg:-translate-x-1/2
+            "
           />
 
           {/* Timeline Items */}
@@ -43,7 +66,7 @@ const Experience = () => {
                 />
               ))
             ) : (
-              <p className="text-center text-slate-400">
+              <p className="text-center text-slate-500 dark:text-slate-400">
                 Experience will be added soon.
               </p>
             )}

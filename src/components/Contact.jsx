@@ -2,11 +2,9 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   FiMail,
-  FiMapPin,
   FiCopy,
   FiCheck,
   FiSend,
-  FiPhone,
 } from "react-icons/fi";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
@@ -42,7 +40,6 @@ const Contact = () => {
     e.preventDefault();
 
     setLoading(true);
-    
 
     try {
       // Send notification to you
@@ -76,7 +73,17 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-slate-950 py-24"
+      className="
+        relative
+        overflow-hidden
+        bg-white
+        py-24
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+        dark:text-white
+      "
     >
       <Container>
         <SectionTitle
@@ -92,9 +99,25 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md"
+            className="
+              w-full
+              overflow-hidden
+              rounded-3xl
+              border
+              border-slate-200
+              bg-white
+              p-6
+              shadow-sm
+              backdrop-blur-md
+              transition-colors
+              duration-300
+              dark:border-slate-800
+              dark:bg-slate-900/60
+              dark:shadow-none
+              sm:p-8
+            "
           >
-            <h3 className="mb-8 text-2xl font-bold text-white">
+            <h3 className="mb-8 text-2xl font-bold text-slate-900 dark:text-white">
               Contact Information
             </h3>
 
@@ -103,15 +126,32 @@ const Contact = () => {
               {/* Email */}
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center rounded-xl border border-slate-800 p-4 transition hover:border-blue-500 hover:bg-slate-800/50"
+                className="
+                  flex
+                  items-center
+                  rounded-xl
+                  border
+                  border-slate-200
+                  p-4
+                  transition
+                  hover:border-blue-500
+                  hover:bg-blue-50
+                  dark:border-slate-800
+                  dark:hover:bg-slate-800/50
+                "
               >
                 <div className="rounded-xl bg-blue-500/10 p-3">
-                  <FiMail className="text-blue-400" size={22} />
+                  <FiMail className="text-blue-500 dark:text-blue-400" size={22} />
                 </div>
 
                 <div className="ml-4">
-                  <p className="text-sm text-slate-400">Email</p>
-                  <p className="break-all text-white">{profile.email}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Email
+                  </p>
+
+                  <p className="break-all text-slate-900 dark:text-white">
+                    {profile.email}
+                  </p>
                 </div>
               </a>
 
@@ -120,15 +160,32 @@ const Contact = () => {
                 href={profile.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center rounded-xl border border-slate-800 p-4 transition hover:border-green-500 hover:bg-slate-800/50"
+                className="
+                  flex
+                  items-center
+                  rounded-xl
+                  border
+                  border-slate-200
+                  p-4
+                  transition
+                  hover:border-green-500
+                  hover:bg-green-50
+                  dark:border-slate-800
+                  dark:hover:bg-slate-800/50
+                "
               >
                 <div className="rounded-xl bg-green-500/10 p-3">
-                  <FaWhatsapp className="text-green-400" size={22} />
+                  <FaWhatsapp className="text-green-500 dark:text-green-400" size={22} />
                 </div>
 
                 <div className="ml-4">
-                  <p className="text-sm text-slate-400">WhatsApp</p>
-                  <p className="text-white">{profile.phone}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    WhatsApp
+                  </p>
+
+                  <p className="text-slate-900 dark:text-white">
+                    {profile.phone}
+                  </p>
                 </div>
               </a>
 
@@ -137,32 +194,66 @@ const Contact = () => {
                 href={profile.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center rounded-xl border border-slate-800 p-4 transition hover:border-sky-500 hover:bg-slate-800/50"
+                className="
+                  flex
+                  items-center
+                  rounded-xl
+                  border
+                  border-slate-200
+                  p-4
+                  transition
+                  hover:border-sky-500
+                  hover:bg-sky-50
+                  dark:border-slate-800
+                  dark:hover:bg-slate-800/50
+                "
               >
                 <div className="rounded-xl bg-sky-500/10 p-3">
-                  <FaTelegramPlane className="text-sky-400" size={22} />
+                  <FaTelegramPlane className="text-sky-500 dark:text-sky-400" size={22} />
                 </div>
 
                 <div className="ml-4">
-                  <p className="text-sm text-slate-400">Telegram</p>
-                  <p className="text-white">@mikeisresilient</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Telegram
+                  </p>
+
+                  <p className="text-slate-900 dark:text-white">
+                    @mikeisresilient
+                  </p>
                 </div>
               </a>
             </div>
 
+            {/* Copy Email */}
             <div className="mt-6">
               <button
                 onClick={copyEmail}
-                className="flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 transition hover:border-blue-500 hover:bg-slate-800"
+                className="
+                  flex
+                  items-center
+                  gap-2
+                  rounded-xl
+                  border
+                  border-slate-300
+                  px-5
+                  py-3
+                  text-slate-700
+                  transition
+                  hover:border-blue-500
+                  hover:bg-blue-50
+                  dark:border-slate-700
+                  dark:text-slate-300
+                  dark:hover:bg-slate-800
+                "
               >
                 {copied ? (
                   <>
-                    <FiCheck className="text-green-400" />
+                    <FiCheck className="text-green-500 dark:text-green-400" />
                     Email Copied
                   </>
                 ) : (
                   <>
-                    <FiCopy className="text-blue-400" />
+                    <FiCopy className="text-blue-500 dark:text-blue-400" />
                     Copy Email Address
                   </>
                 )}
@@ -182,7 +273,29 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     aria-label={social.name}
                     title={social.name}
-                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-700 bg-slate-900 text-white transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/20"
+                    className="
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-slate-300
+                      bg-slate-100
+                      text-slate-700
+                      transition-all
+                      duration-300
+                      hover:-translate-y-1
+                      hover:border-blue-500
+                      hover:bg-blue-500
+                      hover:text-white
+                      hover:shadow-lg
+                      hover:shadow-blue-500/20
+                      dark:border-slate-700
+                      dark:bg-slate-900
+                      dark:text-white
+                    "
                   >
                     <Icon size={22} />
                   </a>
@@ -199,45 +312,165 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-md"
+            className="
+              w-full
+              overflow-hidden
+              rounded-3xl
+              border
+              border-slate-200
+              bg-white
+              p-6
+              shadow-sm
+              backdrop-blur-md
+              transition-colors
+              duration-300
+              dark:border-slate-800
+              dark:bg-slate-900/60
+              dark:shadow-none
+              sm:p-8
+            "
           >
             <div className="space-y-6">
+              {/* Name */}
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 required
-                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="
+                  block
+                  w-full
+                  min-w-0
+                  rounded-xl
+                  border
+                  border-slate-300
+                  bg-slate-50
+                  px-5
+                  py-4
+                  text-slate-900
+                  placeholder:text-slate-400
+                  outline-none
+                  transition
+                  focus:border-blue-500
+                  focus:bg-white
+                  dark:border-slate-700
+                  dark:bg-slate-900
+                  dark:text-white
+                  dark:placeholder:text-slate-500
+                  dark:focus:bg-slate-900
+                "
               />
 
+              {/* Email */}
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 required
-                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="
+                  block
+                  w-full
+                  min-w-0
+                  rounded-xl
+                  border
+                  border-slate-300
+                  bg-slate-50
+                  px-5
+                  py-4
+                  text-slate-900
+                  placeholder:text-slate-400
+                  outline-none
+                  transition
+                  focus:border-blue-500
+                  focus:bg-white
+                  dark:border-slate-700
+                  dark:bg-slate-900
+                  dark:text-white
+                  dark:placeholder:text-slate-500
+                  dark:focus:bg-slate-900
+                "
               />
 
+              {/* Subject */}
               <input
                 type="text"
                 name="subject"
                 placeholder="Subject"
                 required
-                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="
+                  block
+                  w-full
+                  min-w-0
+                  rounded-xl
+                  border
+                  border-slate-300
+                  bg-slate-50
+                  px-5
+                  py-4
+                  text-slate-900
+                  placeholder:text-slate-400
+                  outline-none
+                  transition
+                  focus:border-blue-500
+                  focus:bg-white
+                  dark:border-slate-700
+                  dark:bg-slate-900
+                  dark:text-white
+                  dark:placeholder:text-slate-500
+                  dark:focus:bg-slate-900
+                "
               />
 
+              {/* Message */}
               <textarea
                 name="message"
                 rows={6}
                 placeholder="Tell me about your project..."
                 required
-                className="block w-full min-w-0 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none transition focus:border-blue-500"
+                className="
+                  block
+                  w-full
+                  min-w-0
+                  rounded-xl
+                  border
+                  border-slate-300
+                  bg-slate-50
+                  px-5
+                  py-4
+                  text-slate-900
+                  placeholder:text-slate-400
+                  outline-none
+                  transition
+                  focus:border-blue-500
+                  focus:bg-white
+                  dark:border-slate-700
+                  dark:bg-slate-900
+                  dark:text-white
+                  dark:placeholder:text-slate-500
+                  dark:focus:bg-slate-900
+                "
               />
 
+              {/* Submit */}
               <button
                 type="submit"
                 disabled={loading}
-                className="flex w-full items-center justify-center gap-3 rounded-xl bg-blue-600 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70"
+                className="
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-xl
+                  bg-blue-600
+                  py-4
+                  font-semibold
+                  text-white
+                  transition
+                  hover:bg-blue-700
+                  disabled:cursor-not-allowed
+                  disabled:opacity-70
+                "
               >
                 {loading && (
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
