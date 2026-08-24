@@ -22,25 +22,26 @@ export const profile = {
     "Building resilient software that solves real world problems.",
 
   heroDescription:
-    "I design and build scalable web & mobile applications that blend beautiful user interfaces with robust backend systems. Whether it's a business website, a full stack platform, or a blockchain application, I focus on creating software that is fast, reliable, and built to last.",
+    "I design and build scalable web & mobile applications that blend beautiful user interfaces with robust backend systems. I also build blockchain solutions and data driven platforms, focusing on software that is fast, reliable, responsive, and built to last.",
 
   typingRoles: [
     "Full Stack Web Developer",
     "Mobile App Developer",
     "Full Stack Blockchain Developer",
+    "Backend Developer",
     "Problem Solver",
   ],
 
   // Contact
-  availability: "Open to Full Time Roles",
+  availability: "Open to Projects, Roles & Collaborations",
 
   location: "Nigeria",
 
-  email: "michaelege022@gmail.com", // TODO: Replace with your email
+  email: "michaelege022@gmail.com",
 
-  phone: "+234 806 302 3766", // TODO: Replace with your phone number
+  phone: "+234 806 302 3766",
 
-  portfolio: "https://mikeisresilient.vercel.app", // TODO: Replace after deployment
+  portfolio: "https://mikeisresilient.vercel.app",
 
   whatsapp: "https://wa.me/2348063023766",
 
@@ -73,7 +74,7 @@ export const profile = {
 
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/michael-ege-2997ba420", // TODO: Replace with your LinkedIn URL
+      url: "https://www.linkedin.com/in/mikeisresilient",
       icon: FiLinkedin,
     },
 
@@ -81,6 +82,6 @@ export const profile = {
       name: "X",
       icon: FaXTwitter,
       url: "https://x.com/mikeisresilient",
-    }
+    },
   ],
 };

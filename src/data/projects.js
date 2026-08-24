@@ -7,6 +7,7 @@ import staking from "../assets/projects/staking.jpg";
 import placeholder from "../assets/projects/placeholder.png";
 import prostore from "../assets/projects/prostore.png";
 import prostoreMobile from "../assets/projects/prostore-mobile.png";
+import chainpulse from "../assets/projects/chainpulse.png";
 
 // Temporary placeholders
 const digitalWill = placeholder;
@@ -63,7 +64,7 @@ export const projects = [
   },
 
   {
-    id: 11,
+    id: 3,
     featured: false,
     title: "ProStore Mobile",
     image: prostoreMobile,
@@ -100,7 +101,34 @@ export const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
+    title: "ChainPulse",
+    description:
+      "A blockchain analytics platform that tracks Ethereum network activity, cryptocurrency prices, transactions, wallet data, and network statistics through a modern full stack dashboard.",
+
+    image: chainpulse,
+
+    technologies: [
+      "Rust",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Ethereum",
+      "Etherscan API",
+      "REST API",
+      "Vite",
+      "Tailwind CSS",
+    ],
+
+    github: "https://github.com/mikeisresilient/chainpulse-frontend",
+
+    live: "https://chainpulse-frontend.onrender.com/",
+
+    featured: false,
+  },
+
+  {
+    id: 5,
     featured: false,
     title: "Little Lemon Restaurant",
     image: littleLemon,
@@ -120,7 +148,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 6,
     featured: false,
     title: "Training Attendance System",
     image: attendance,
@@ -140,7 +168,7 @@ export const projects = [
   },
 
   {
-    id: 5,
+    id: 7,
     featured: false,
     title: "Resilient Staking DApp",
     image: staking,
@@ -160,7 +188,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 8,
     featured: false,
     title: "Blockchain Assessment",
     image: blockchain,
@@ -182,7 +210,7 @@ export const projects = [
 
 
   {
-    id: 7,
+    id: 9,
     featured: false,
     title: "Digital Will DApp",
     image: digitalWill,
@@ -202,7 +230,7 @@ export const projects = [
   },
 
   {
-    id: 8,
+    id: 10,
     featured: false,
     title: "Voting DApp",
     image: voting,
@@ -222,7 +250,7 @@ export const projects = [
   },
 
   {
-    id: 9,
+    id: 11,
     featured: false,
     title: "ERC20 Token Contract",
     image: token,
@@ -241,7 +269,7 @@ export const projects = [
   },
 
   {
-    id: 10,
+    id: 12,
     featured: true,
     title: "ProStore Ecommerce",
     image: prostore,

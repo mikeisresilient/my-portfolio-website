@@ -20,6 +20,7 @@ import {
   SiMongodb,
   SiVercel,
   SiExpo,
+  SiRust,
 } from "react-icons/si";
 
 export const techStack = [
@@ -47,6 +48,11 @@ export const techStack = [
     name: "TypeScript",
     icon: SiTypescript,
     color: "text-blue-500",
+  },
+  {
+    name: "Rust",
+    icon: SiRust,
+    color: "text-orange-500",
   },
   {
     name: "Tailwind CSS",

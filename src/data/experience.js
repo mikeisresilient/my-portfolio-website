@@ -13,6 +13,7 @@ export const experiences = [
       "Designed and developed responsive web and mobile applications using React, Next.js, React Native, Expo, TypeScript, Django, Express.js, Prisma, and Tailwind CSS.",
       "Developed RESTful APIs, authentication systems, database integrations, and administrative dashboards.",
       "Built modern user interfaces with responsive layouts and smooth animations using Framer Motion.",
+      "Developed backend systems and data driven applications using Rust, PostgreSQL, and REST APIs.",
       "Deployed and maintained applications on Vercel and Render for reliable performance and scalability.",
       "Used Git and GitHub for version control, collaboration, and project management.",
     ],
@@ -23,6 +24,7 @@ export const experiences = [
       "React Native",
       "Expo",
       "TypeScript",
+      "Rust",
       "Django",
       "Express.js",
       "Prisma",
@@ -41,7 +43,7 @@ export const experiences = [
     location: "Remote",
 
     description:
-      "Designing and developing blockchain applications and smart contracts for decentralized systems, DeFi platforms, tokens, voting systems, and digital estate applications.",
+      "Designing and developing blockchain applications, smart contracts, and blockchain data systems for decentralized applications and analytics platforms.",
 
     impact: [
       "Designed and deployed Solidity smart contracts for ERC20 tokens, staking systems, voting mechanisms, and digital estate applications.",
@@ -49,15 +51,21 @@ export const experiences = [
       "Implemented modular contract architectures and access control logic to improve security and maintainability.",
       "Wrote and executed unit tests using Hardhat, Mocha, and Chai on Ethereum Sepolia.",
       "Validated transactions, gas usage, and contract behavior before deployment.",
+      "Built ChainPulse, a blockchain analytics platform for monitoring Ethereum network activity, transactions, cryptocurrency prices, and blockchain statistics.",
+      "Integrated Ethereum RPC and blockchain data APIs with a Rust backend and PostgreSQL database.",
     ],
 
     technologies: [
       "Solidity",
+      "Rust",
       "Hardhat",
       "Ethers.js",
       "Web3.js",
       "React",
+      "Ethereum",
       "Ethereum Sepolia",
+      "PostgreSQL",
+      "REST APIs",
       "Mocha",
       "Chai",
     ],
