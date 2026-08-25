@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
-import { FiArrowDown, FiGithub } from "react-icons/fi";
+import { FiArrowDown, } from "react-icons/fi";
 
 import Projects from "../components/Projects";
 import Container from "../components/ui/Container";
-import { profile } from "../data/profile";
 
 export default function ProjectsPage() {
-  const github = profile.socials.find(
-    (social) => social.name === "GitHub",
-  );
 
   return (
     <>

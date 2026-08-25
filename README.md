@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🚀 Michael Ege | Full Stack Developer
+# Michael Ege | Full Stack Developer
 
 A modern, responsive, and performance-focused developer portfolio showcasing my projects, experience, skills, and services. Built with React, Vite, Tailwind CSS, and Framer Motion.
 
 ### 🌐 Live Demo
-https://your-vercel-url.vercel.app
+https://mikeisresilient.vercel.app
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -18,15 +18,8 @@ https://your-vercel-url.vercel.app
 
 ---
 
-# 📸 Preview
 
-> Replace the image below with a screenshot of your portfolio homepage.
-
-![Portfolio Preview](./public/preview.png)
-
----
-
-# 📖 Overview
+# Overview
 
 This portfolio was designed and developed to showcase my technical expertise, professional experience, and software development projects in a modern, interactive, and responsive interface.
 
@@ -34,25 +27,24 @@ The application emphasizes clean UI, smooth animations, excellent user experienc
 
 ---
 
-# ✨ Features
+# Features
 
-- 🎨 Modern UI with Glassmorphism Design
-- 📱 Fully Responsive on all screen sizes
-- ⚡ Lightning Fast Performance with Vite
-- 🎬 Smooth Animations using Framer Motion
-- 📂 Featured Project Showcase
-- 💼 Professional Experience Timeline
-- 🛠 Services Section
-- 👨‍💻 Technology Stack Display
-- 📧 Functional Contact Form powered by EmailJS
-- ⬆ Back to Top Button
-- 🔍 SEO Optimized
-- ♿ Accessibility Improvements
-- 🧩 Data Driven Architecture
+- Fully Responsive on all screen sizes
+- Lightning Fast Performance with Vite
+- Smooth Animations using Framer Motion
+- Featured Project Showcase
+- Professional Experience Timeline
+- Services Section
+- Technology Stack Display
+- Functional Contact Form powered by EmailJS
+- Back to Top Button
+- SEO Optimized
+- Accessibility Improvements
+- Data Driven Architecture
 
 ---
 
-# 🛠 Tech Stack
+# Tech Stack
 
 | Category | Technologies |
 |-----------|--------------|
@@ -103,7 +95,7 @@ src
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 ## Clone the Repository
 
@@ -153,7 +145,7 @@ npm run preview
 
 ---
 
-# 📱 Responsive Design
+# Responsive Design
 
 The portfolio has been optimized for:
 
@@ -165,39 +157,8 @@ The portfolio has been optimized for:
 
 ---
 
-# 📸 Screenshots
 
-## Hero Section
-
-> Add screenshot here
-
----
-
-## About Section
-
-> Add screenshot here
-
----
-
-## Projects Section
-
-> Add screenshot here
-
----
-
-## Contact Section
-
-> Add screenshot here
-
----
-
-## Mobile View
-
-> Add screenshot here
-
----
-
-# 🎯 Lighthouse Goals
+# Lighthouse Goals
 
 - ✅ Performance 95+
 - ✅ Accessibility 100
@@ -206,20 +167,19 @@ The portfolio has been optimized for:
 
 ---
 
-# 🌍 Deployment
+# Deployment
 
 This project is deployed on **Vercel**.
 
 Live Website:
 
-https://your-vercel-url.vercel.app
+https://mikeisresilient.vercel.app
 
 ---
 
-# 📈 Future Improvements
+# Future Improvements
 
 - Blog Integration
-- Dark & Light Theme Toggle
 - CMS Integration
 - Analytics Dashboard
 - Internationalization (i18n)
@@ -228,21 +188,21 @@ https://your-vercel-url.vercel.app
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 ## Michael Ege
 
 Full Stack Web Developer passionate about building scalable web applications, modern user interfaces, and blockchain-powered solutions.
 
-- 🌐 Portfolio: https://mikeisresilient.vercel.app
-- 💼 LinkedIn: https://www.linkedin.com/in/michael-ege-2997ba420
-- 🐙 GitHub: https://github.com/mikeisresilient
-- 🐦 X (Twitter): https://x.com/mikeisresilient
-- 📧 Email: michaelege022@gmail.com
+- Portfolio: https://mikeisresilient.vercel.app
+- LinkedIn: https://www.linkedin.com/in/mikeisresilient
+- GitHub: https://github.com/mikeisresilient
+- X (Twitter): https://x.com/mikeisresilient
+- Email: michaelege022@gmail.com
 
 ---
 
-# ⭐ Support
+# Support
 
 If you found this project useful, consider giving it a ⭐ on GitHub.
 
@@ -250,7 +210,7 @@ It helps increase the visibility of the project and supports my work.
 
 ---
 
-# 📄 License
+# License
 
 This project is licensed under the **MIT License**.
 
@@ -260,7 +220,7 @@ Feel free to fork, learn from, and adapt it for your own projects.
 
 <div align="center">
 
-### Built with ❤️ by Michael Ege
+### Built by Michael Ege
 
 **Turning ideas into fast, scalable, and impactful digital experiences.**
 
