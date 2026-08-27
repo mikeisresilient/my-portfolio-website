@@ -109,7 +109,8 @@ export const projects = [
 
     live:
       "https://expo.dev/accounts/mikeisresilient/projects/prostore-mobile/builds/b4a62dbb-afe1-4bcf-9045-f1ea4cad335b",
-  },
+    liveButtonText: "Download APK",
+    },
 
   {
     id: 4,
