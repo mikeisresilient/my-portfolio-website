@@ -16,12 +16,20 @@ import App from "./App";
 
 const savedTheme = localStorage.getItem("theme");
 
-const theme = savedTheme || "dark";
+const theme =
+  savedTheme === "light" || savedTheme === "dark"
+    ? savedTheme
+    : "dark";
 
-document.documentElement.classList.toggle(
-  "dark",
-  theme === "dark"
-);
+const root = document.documentElement;
+
+if (theme === "dark") {
+  root.classList.add("dark");
+} else {
+  root.classList.remove("dark");
+}
+
+root.style.colorScheme = theme;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -40,5 +48,5 @@ createRoot(document.getElementById("root")).render(
         }}
       />
     </HelmetProvider>
-  </StrictMode>
+  </StrictMode>,
 );

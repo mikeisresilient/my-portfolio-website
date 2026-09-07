@@ -5,20 +5,27 @@
 /* Theme variables */
 :root {
   --grid-color: #0f172a;
+  --page-background: #f8fafc;
+  --page-foreground: #0f172a;
 }
 
 .dark {
   --grid-color: #ffffff;
+  --page-background: #020617;
+  --page-foreground: #f8fafc;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--page-background);
+  color: var(--page-foreground);
 }
 
 body {
   margin: 0;
-  background: #020617;
-  color: #f8fafc;
+  min-height: 100vh;
+  background: var(--page-background);
+  color: var(--page-foreground);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 
@@ -29,10 +36,4 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-/* Light mode */
-html:not(.dark) body {
-  background: #f8fafc;
-  color: #0f172a;
 }
