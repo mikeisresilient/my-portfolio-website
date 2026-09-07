@@ -31,21 +31,25 @@ export default function Navbar() {
   /* =========================
      THEME
   ========================== */
-  const toggleTheme = () => {
-    const newDarkMode = !darkMode;
+ const toggleTheme = () => {
+  const newDarkMode = !darkMode;
 
-    setDarkMode(newDarkMode);
+  setDarkMode(newDarkMode);
 
-    document.documentElement.classList.toggle(
-      "dark",
-      newDarkMode,
-    );
+  document.documentElement.classList.toggle(
+    "dark",
+    newDarkMode,
+  );
 
-    localStorage.setItem(
-      "theme",
-      newDarkMode ? "dark" : "light",
-    );
-  };
+  document.documentElement.style.colorScheme = newDarkMode
+    ? "dark"
+    : "light";
+
+  localStorage.setItem(
+    "theme",
+    newDarkMode ? "dark" : "light",
+  );
+};
 
   /* =========================
      CLOSE MOBILE MENU
