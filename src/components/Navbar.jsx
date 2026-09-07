@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FiSun, FiMoon } from "react-icons/fi";
-import {
-  Link,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -31,25 +27,31 @@ export default function Navbar() {
   /* =========================
      THEME
   ========================== */
- const toggleTheme = () => {
-  const newDarkMode = !darkMode;
+  const toggleTheme = () => {
+    const newDarkMode = !darkMode;
+    const newTheme = newDarkMode ? "dark" : "light";
 
-  setDarkMode(newDarkMode);
+    setDarkMode(newDarkMode);
 
-  document.documentElement.classList.toggle(
-    "dark",
-    newDarkMode,
-  );
+    // Update the Tailwind dark mode class
+    document.documentElement.classList.toggle("dark", newDarkMode);
 
-  document.documentElement.style.colorScheme = newDarkMode
-    ? "dark"
-    : "light";
+    // Update browser theme color
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
-  localStorage.setItem(
-    "theme",
-    newDarkMode ? "dark" : "light",
-  );
-};
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute(
+        "content",
+        newDarkMode ? "#020617" : "#f8fafc",
+      );
+    }
+
+    // Update browser native UI color scheme
+    document.documentElement.style.colorScheme = newTheme;
+
+    // Save theme preference
+    localStorage.setItem("theme", newTheme);
+  };
 
   /* =========================
      CLOSE MOBILE MENU
@@ -98,10 +100,7 @@ export default function Navbar() {
     }
 
     if (path === "/about#tech-stack") {
-      return (
-        location.pathname === "/about" &&
-        location.hash === "#tech-stack"
-      );
+      return location.pathname === "/about" && location.hash === "#tech-stack";
     }
 
     return location.pathname === path;
@@ -174,10 +173,7 @@ export default function Navbar() {
               lg:text-xl
             "
           >
-            Mike{" "}
-            <span className="text-blue-500">
-              Is Resilient
-            </span>
+            Mike <span className="text-blue-500">Is Resilient</span>
           </Link>
 
           {/* =========================
@@ -235,15 +231,9 @@ export default function Navbar() {
               type="button"
               onClick={toggleTheme}
               aria-label={
-                darkMode
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
+                darkMode ? "Switch to light mode" : "Switch to dark mode"
               }
-              title={
-                darkMode
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
-              }
+              title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
               className="
                 flex
                 h-9
@@ -267,11 +257,7 @@ export default function Navbar() {
                 dark:hover:border-blue-500
               "
             >
-              {darkMode ? (
-                <FiSun size={17} />
-              ) : (
-                <FiMoon size={17} />
-              )}
+              {darkMode ? <FiSun size={17} /> : <FiMoon size={17} />}
             </button>
 
             {/* Resume */}
@@ -302,9 +288,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setOpen((prev) => !prev)}
               aria-label={
-                open
-                  ? "Close navigation menu"
-                  : "Open navigation menu"
+                open ? "Close navigation menu" : "Open navigation menu"
               }
               aria-expanded={open}
               className="
@@ -328,11 +312,7 @@ export default function Navbar() {
                 lg:hidden
               "
             >
-              {open ? (
-                <HiX size={23} />
-              ) : (
-                <HiMenuAlt3 size={23} />
-              )}
+              {open ? <HiX size={23} /> : <HiMenuAlt3 size={23} />}
             </button>
           </div>
         </div>
@@ -419,9 +399,7 @@ export default function Navbar() {
                     transition={{
                       delay: index * 0.04,
                     }}
-                    onClick={() =>
-                      handleNavigation(item.to)
-                    }
+                    onClick={() => handleNavigation(item.to)}
                     className={`
                       flex
                       w-full

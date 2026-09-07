@@ -14,22 +14,37 @@ import App from "./App";
   has explicitly selected it.
 */
 
-const savedTheme = localStorage.getItem("theme");
+let theme = "dark";
 
-const theme =
-  savedTheme === "light" || savedTheme === "dark"
-    ? savedTheme
-    : "dark";
+try {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    theme = savedTheme;
+  }
+} catch {
+  theme = "dark";
+}
 
 const root = document.documentElement;
 
+root.classList.remove("dark");
+
 if (theme === "dark") {
   root.classList.add("dark");
-} else {
-  root.classList.remove("dark");
 }
 
 root.style.colorScheme = theme;
+const themeColorMeta = document.querySelector(
+  'meta[name="theme-color"]'
+);
+
+if (themeColorMeta) {
+  themeColorMeta.setAttribute(
+    "content",
+    theme === "dark" ? "#020617" : "#f8fafc"
+  );
+}
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
