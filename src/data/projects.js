@@ -8,6 +8,8 @@ import placeholder from "../assets/projects/placeholder.png";
 import prostore from "../assets/projects/prostore.png";
 import prostoreMobile from "../assets/projects/prostore-mobile.png";
 import chainpulse from "../assets/projects/chainpulse.png";
+import saveflow from "../assets/projects/saveflow.png";
+import flowdesk from "../assets/projects/flowdesk.png";
 
 // Temporary placeholders
 const digitalWill = placeholder;
@@ -42,6 +44,36 @@ export const projects = [
 
     live:
       "https://fromzerohq.vercel.app/",
+  },
+
+  {
+    id: 14,
+    featured: false,
+    title: "FlowDesk",
+    image: flowdesk,
+
+    description:
+      "A modern responsive workspace and productivity platform designed to help users manage projects, tasks, and day to day work through a polished SaaS dashboard.",
+
+    challenge:
+      "Design and build a responsive productivity interface that remains intuitive across mobile phones, tablets, laptops, and desktop screens while providing clear task and project management workflows.",
+
+    solution:
+      "Built a responsive SaaS style application using React, TypeScript, Vite, Tailwind CSS, and Framer Motion. Implemented authentication screens, dashboard navigation, task and project management interfaces, filtering interactions, responsive mobile navigation, and polished UI animations.",
+
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+
+    github:
+      "https://github.com/mikeisresilient/flowdesk",
+
+    live:
+      "https://flowdeskok.vercel.app/",
   },
 
   {
@@ -109,8 +141,9 @@ export const projects = [
 
     live:
       "https://expo.dev/accounts/mikeisresilient/projects/prostore-mobile/builds/b4a62dbb-afe1-4bcf-9045-f1ea4cad335b",
+
     liveButtonText: "Download APK",
-    },
+  },
 
   {
     id: 4,
@@ -144,6 +177,39 @@ export const projects = [
 
     live:
       "https://chainpulse-frontend.onrender.com/",
+  },
+
+  {
+    id: 13,
+    featured: false,
+    title: "SaveFlow",
+    image: saveflow,
+
+    description:
+      "A full stack media downloader application that retrieves media information and processes video downloads through a responsive and user friendly interface.",
+
+    challenge:
+      "Build a reliable media downloading workflow that connects a modern frontend with backend processing while handling media information, downloads, errors, and file processing efficiently.",
+
+    solution:
+      "Developed a responsive application with a React and Next.js frontend and an Express backend, integrating yt-dlp for media extraction and FFmpeg for media processing. Implemented API endpoints for media information and downloads with a streamlined user experience.",
+
+    technologies: [
+      "React",
+      "Next.js",
+      "Express",
+      "Node.js",
+      "yt-dlp",
+      "FFmpeg",
+      "REST API",
+      "Tailwind CSS",
+    ],
+
+    github:
+      "https://github.com/mikeisresilient/saveflow",
+
+    live:
+      "https://saveflowapp.vercel.app/",
   },
 
   {
@@ -181,13 +247,13 @@ export const projects = [
     image: attendance,
 
     description:
-      "A Django-based attendance management system with participant registration, reporting, and an administrator dashboard.",
+      "A Django based attendance management system with participant registration, reporting, and an administrator dashboard.",
 
     challenge:
       "Digitize attendance tracking and simplify participant management for training events.",
 
     solution:
-      "Built a full-stack Django application with secure data management, responsive pages, and an administrative dashboard.",
+      "Built a full stack Django application with secure data management, responsive pages, and an administrative dashboard.",
 
     technologies: [
       "Django",
@@ -209,7 +275,7 @@ export const projects = [
     image: staking,
 
     description:
-      "A decentralized staking application that allows users to stake tokens and receive blockchain-based rewards.",
+      "A decentralized staking application that allows users to stake tokens and receive blockchain based rewards.",
 
     challenge:
       "Create a secure staking workflow that interacts with Ethereum smart contracts.",
@@ -297,7 +363,7 @@ export const projects = [
       "Ensure secure voting while preventing duplicate votes and maintaining transparency.",
 
     solution:
-      "Built Ethereum smart contracts with a React frontend for secure blockchain-based voting.",
+      "Built Ethereum smart contracts with a React frontend for secure blockchain based voting.",
 
     technologies: [
       "Solidity",
