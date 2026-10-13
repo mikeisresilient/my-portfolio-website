@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { FiCheckCircle } from "react-icons/fi";
 
 const ExperienceCard = ({ experience, index }) => {
@@ -15,12 +14,7 @@ const ExperienceCard = ({ experience, index }) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      whileHover={{ y: -4 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
+    <div
       className={`relative flex w-full ${
         isLeft ? "lg:justify-start" : "lg:justify-end"
       }`}
@@ -56,9 +50,8 @@ const ExperienceCard = ({ experience, index }) => {
           p-6
           shadow-sm
           backdrop-blur-md
-          transition-all
+          transition-colors
           duration-300
-          hover:-translate-y-1
           hover:border-blue-500/40
           hover:shadow-xl
           hover:shadow-blue-500/10
@@ -132,7 +125,7 @@ const ExperienceCard = ({ experience, index }) => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Container from "./ui/Container";
 import SectionTitle from "./ui/SectionTitle";
 import ExperienceCard from "./ExperienceCard";
@@ -21,8 +20,6 @@ const Experience = () => {
         dark:text-white
       "
     >
-     
-
       <Container>
         <SectionTitle
           badge={experienceSection.badge}
@@ -31,19 +28,14 @@ const Experience = () => {
         />
 
         <div className="relative mt-20">
-          {/* Timeline Line */}
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
+          {/* Static Timeline Line */}
+          <div
             className="
               absolute
               left-7
               top-0
               h-full
               w-0.5
-              origin-top
               bg-linear-to-b
               from-blue-500
               via-violet-500
